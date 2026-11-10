@@ -1279,6 +1279,299 @@ renderResources();
 renderTasks();
 updateDashboard();
 
+</script> 
+  <!-- AAT REVISION HUB - PROFESSIONAL STUDENT DASHBOARD -->
+<style>
+#aatProDashboard{
+  margin-top:35px;
+  background:#fff;
+  border:1px solid #e7e8f0;
+  border-radius:22px;
+  padding:25px;
+  box-shadow:0 12px 35px rgba(24,26,54,.07);
+}
+#aatProDashboard .dash-heading{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:15px;flex-wrap:wrap;
+  margin-bottom:22px;
+}
+#aatProDashboard h2{margin:0;font-size:25px;color:#1b0c0e}
+#aatProDashboard p{color:#74788f;font-size:13px}
+#aatProDashboard .dash-label{
+  color:#b91c1c;font-weight:800;
+  font-size:11px;letter-spacing:1.5px;
+}
+#aatProDashboard .dash-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+}
+#aatProDashboard .dash-card{
+  background:#fff7f7;border:1px solid #f5dada;
+  border-radius:16px;padding:19px;
+}
+#aatProDashboard .dash-icon{font-size:24px}
+#aatProDashboard .dash-number{
+  display:block;font-size:30px;font-weight:900;
+  color:#a71922;margin-top:8px;
+}
+#aatProDashboard .dash-card small{color:#74788f}
+#aatProDashboard .dash-bottom{
+  display:grid;grid-template-columns:1.3fr 1fr;
+  gap:17px;margin-top:17px;
+}
+#aatProDashboard .dash-panel{
+  border:1px solid #e7e8f0;border-radius:16px;padding:20px;
+}
+#aatProDashboard .dash-panel h3{margin:0 0 15px;font-size:16px}
+#aatProDashboard .week-chart{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:10px;align-items:end;height:115px;
+}
+#aatProDashboard .week-day{
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:end;height:100%;
+  gap:7px;font-size:10px;color:#74788f;
+}
+#aatProDashboard .week-bar{
+  width:100%;max-width:32px;min-height:5px;
+  background:#f2caca;border-radius:7px 7px 3px 3px;
+}
+#aatProDashboard .week-bar.active{background:#c62828}
+#aatProDashboard .dash-shortcuts{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+#aatProDashboard .dash-shortcuts a{
+  display:block;padding:12px;background:#fff0f0;
+  color:#a71922;border-radius:10px;font-size:12px;
+  font-weight:800;text-align:center;
+}
+#aatProDashboard .dash-progress{
+  height:10px;background:#eeeef3;
+  border-radius:20px;overflow:hidden;margin:12px 0;
+}
+#aatProDashboard .dash-progress span{
+  display:block;height:100%;width:0%;
+  background:linear-gradient(90deg,#a71922,#ef4444);
+  border-radius:20px;transition:width .4s;
+}
+@media(max-width:750px){
+  #aatProDashboard .dash-grid{grid-template-columns:repeat(2,1fr)}
+  #aatProDashboard .dash-bottom{grid-template-columns:1fr}
+}
+@media(max-width:420px){
+  #aatProDashboard{padding:15px}
+  #aatProDashboard .dash-grid{gap:8px}
+  #aatProDashboard .dash-card{padding:12px}
+  #aatProDashboard .dash-number{font-size:24px}
+}
+</style>
+
+<section id="aatProDashboard">
+  <div class="dash-heading">
+    <div>
+      <div class="dash-label">YOUR PERSONAL LEARNING CENTRE</div>
+      <h2 id="aatDashWelcome">Your dashboard</h2>
+      <p>See your progress and keep moving towards your AAT goals.</p>
+    </div>
+    <span class="tag free">STUDENT DASHBOARD</span>
+  </div>
+
+  <div class="dash-grid">
+    <div class="dash-card">
+      <div class="dash-icon">📚</div>
+      <span class="dash-number" id="aatDashTopics">0</span>
+      <small>Topics completed</small>
+    </div>
+    <div class="dash-card">
+      <div class="dash-icon">🎯</div>
+      <span class="dash-number" id="aatDashQuizzes">0</span>
+      <small>Quiz attempts</small>
+    </div>
+    <div class="dash-card">
+      <div class="dash-icon">🏆</div>
+      <span class="dash-number" id="aatDashAverage">0%</span>
+      <small>Average quiz score</small>
+    </div>
+    <div class="dash-card">
+      <div class="dash-icon">🔥</div>
+      <span class="dash-number" id="aatDashStreak">0 days</span>
+      <small>Current study streak</small>
+    </div>
+  </div>
+
+  <div class="dash-bottom">
+    <div class="dash-panel">
+      <h3>📅 Your weekly study activity</h3>
+      <div class="week-chart" id="aatDashWeek"></div>
+      <p id="aatDashWeekMessage">Your study activity will appear here.</p>
+    </div>
+
+    <div class="dash-panel">
+      <h3>🚀 Your revision progress</h3>
+      <strong id="aatDashProgressText">0% completed</strong>
+      <div class="dash-progress">
+        <span id="aatDashProgressBar"></span>
+      </div>
+      <p>Keep completing topics to build your progress.</p>
+      <h3 style="margin-top:20px">⚡ Quick access</h3>
+      <div class="dash-shortcuts">
+        <a href="#levels">AAT Levels</a>
+        <a href="#resources">Study Notes</a>
+        <a href="#study">Practice Quizzes</a>
+        <a href="#planner">Study Planner</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  "use strict";
+
+  const storageKey = "aatHub_activityDays";
+
+  function read(key,fallback){
+    try{
+      const value=localStorage.getItem("aatHub_"+key);
+      return value===null?fallback:JSON.parse(value);
+    }catch(e){return fallback}
+  }
+
+  function save(key,value){
+    try{
+      localStorage.setItem("aatHub_"+key,JSON.stringify(value));
+    }catch(e){}
+  }
+
+  function dateKey(date){
+    return date.getFullYear()+"-"+
+      String(date.getMonth()+1).padStart(2,"0")+"-"+
+      String(date.getDate()).padStart(2,"0");
+  }
+
+  function recordStudy(){
+    const days=read("activityDays",[]);
+    const today=dateKey(new Date());
+
+    if(!days.includes(today)){
+      days.push(today);
+      save("activityDays",days);
+    }
+
+    updateProDashboard();
+  }
+
+  function updateProDashboard(){
+    const completed=read("completed",[]);
+    const quizzes=read("quizHistory",[]);
+    const tasks=read("tasks",[]);
+    const days=read("activityDays",[]);
+
+    const studentName=localStorage.getItem("aatHub_student")||"Student";
+    document.getElementById("aatDashWelcome").textContent=
+      "Welcome back, "+studentName+"!";
+
+    document.getElementById("aatDashTopics").textContent=completed.length;
+    document.getElementById("aatDashQuizzes").textContent=quizzes.length;
+
+    const average=quizzes.length
+      ?Math.round(quizzes.reduce((sum,q)=>sum+Number(q.score||0),0)/quizzes.length)
+      :0;
+
+    document.getElementById("aatDashAverage").textContent=average+"%";
+
+    const today=dateKey(new Date());
+    const yesterdayDate=new Date();
+    yesterdayDate.setDate(yesterdayDate.getDate()-1);
+    const yesterday=dateKey(yesterdayDate);
+
+    let streak=0;
+    let checkDate=new Date();
+
+    if(!days.includes(today)){
+      if(days.includes(yesterday)){
+        checkDate=yesterdayDate;
+      }else{
+        checkDate=null;
+      }
+    }
+
+    if(checkDate){
+      while(days.includes(dateKey(checkDate))){
+        streak++;
+        checkDate.setDate(checkDate.getDate()-1);
+      }
+    }
+
+    document.getElementById("aatDashStreak").textContent=
+      streak+" "+(streak===1?"day":"days");
+
+    const totalTopics=20;
+    const percentage=Math.min(100,Math.round(completed.length/totalTopics*100));
+
+    document.getElementById("aatDashProgressText").textContent=
+      percentage+"% completed";
+
+    document.getElementById("aatDashProgressBar").style.width=
+      percentage+"%";
+
+    const week=document.getElementById("aatDashWeek");
+    let activeDays=0;
+    let html="";
+
+    for(let i=6;i>=0;i--){
+      const d=new Date();
+      d.setDate(d.getDate()-i);
+
+      const key=dateKey(d);
+      const active=days.includes(key);
+
+      if(active)activeDays++;
+
+      html+=`
+        <div class="week-day">
+          <div class="week-bar ${active?"active":""}"
+               style="height:${active?75:8}px"></div>
+          <span>${d.toLocaleDateString("en-GB",{weekday:"short"})}</span>
+        </div>`;
+    }
+
+    week.innerHTML=html;
+
+    document.getElementById("aatDashWeekMessage").textContent=
+      activeDays+" out of 7 days with recorded study activity.";
+
+  }
+
+  function wrapActivity(name){
+    const original=window[name];
+
+    if(typeof original!=="function"||original.aatActivityWrapped)return;
+
+    const wrapped=function(){
+      const result=original.apply(this,arguments);
+      recordStudy();
+      return result;
+    };
+
+    wrapped.aatActivityWrapped=true;
+    window[name]=wrapped;
+  }
+
+  [
+    "markComplete",
+    "finishQuiz",
+    "openNotes",
+    "openFlashcards",
+    "addTask",
+    "toggleTask"
+  ].forEach(wrapActivity);
+
+  window.addEventListener("storage",updateProDashboard);
+
+  updateProDashboard();
+
+})();
 </script>
+<!-- END PROFESSIONAL STUDENT DASHBOARD -->
 </body>
 </html>
