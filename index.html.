@@ -1,0 +1,1279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11152b">
+<meta name="description" content="AAT Revision Hub - free and premium accounting revision notes, quizzes, flashcards, practice questions, calculators and study resources for AAT Levels 2, 3 and 4.">
+<meta name="keywords" content="AAT revision, AAT Level 2, AAT Level 3, AAT Level 4, accounting revision, bookkeeping, accounting quizzes">
+<meta name="author" content="AAT Revision Hub">
+<link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/">
+<title>AAT Revision Hub | Accounting Revision & Study Resources</title>
+
+<style>
+:root{
+  --bg:#f5f6fb;
+  --surface:#ffffff;
+  --surface2:#f0f1fa;
+  --ink:#171a31;
+  --muted:#74788f;
+  --purple:#7458e8;
+  --purple2:#927cf4;
+  --navy:#11152b;
+  --border:#e7e8f0;
+  --green:#15966d;
+  --red:#df555d;
+  --shadow:0 12px 35px rgba(24,26,54,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--bg);color:var(--ink);
+ font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ line-height:1.6;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.topbar{
+ background:var(--navy);color:white;padding:9px 5%;
+ text-align:center;font-size:12px;letter-spacing:.3px;
+}
+.topbar span{color:#c6baff}
+header{
+ background:white;border-bottom:1px solid var(--border);
+ position:sticky;top:0;z-index:50;
+}
+.nav{
+ max-width:1400px;margin:auto;padding:13px 4%;
+ display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.logo{display:flex;align-items:center;gap:11px;font-weight:850;font-size:19px}
+.logo-icon{
+ width:42px;height:42px;border-radius:13px;
+ display:grid;place-items:center;color:white;
+ background:linear-gradient(135deg,#7458e8,#a58bff);
+ font-size:20px;
+}
+.logo small{display:block;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:1px}
+.navlinks{display:flex;gap:20px;align-items:center;font-size:13px;font-weight:650}
+.navlinks a:hover{color:var(--purple)}
+.navright{display:flex;gap:9px;align-items:center}
+.btn{
+ border:0;border-radius:10px;padding:10px 16px;
+ font-weight:750;font-size:13px;transition:.2s;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.primary{background:var(--purple);color:white}
+.secondary{background:#eeeafd;color:#6249d2}
+.dark{background:var(--navy);color:white}
+.outline{background:white;border:1px solid var(--border);color:var(--ink)}
+.success{background:#e4f7ef;color:#117c58}
+.danger{background:#fff0f0;color:var(--red)}
+.mobile-toggle{display:none;background:none;border:0;font-size:24px}
+.container{max-width:1300px;margin:auto;padding:35px 4%}
+.hero{
+ background:linear-gradient(115deg,#11152b,#24254e 65%,#493b86);
+ border-radius:25px;padding:55px 6%;color:white;
+ display:grid;grid-template-columns:1.5fr 1fr;gap:30px;
+ position:relative;overflow:hidden;
+}
+.hero:after{
+ content:"";position:absolute;width:350px;height:350px;border-radius:50%;
+ background:rgba(153,125,255,.13);right:-100px;top:-120px;
+}
+.eyebrow{
+ color:#c5b7ff;text-transform:uppercase;letter-spacing:2px;
+ font-size:11px;font-weight:800;
+}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.12;margin:17px 0}
+.hero p{color:#d0d0e5;max-width:600px;font-size:16px}
+.hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:25px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:center;z-index:1}
+.stat{
+ padding:19px;background:rgba(255,255,255,.09);
+ border:1px solid rgba(255,255,255,.13);border-radius:16px;
+}
+.stat strong{display:block;font-size:27px}
+.stat small{color:#d4d0e8}
+.section{margin-top:43px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}
+.section-head h2{font-size:25px;margin:0}
+.section-head p{color:var(--muted);margin:4px 0 0;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card{
+ background:var(--surface);border:1px solid var(--border);
+ border-radius:17px;padding:21px;box-shadow:var(--shadow);
+}
+.card h3{margin:9px 0 5px;font-size:17px}
+.card p{color:var(--muted);font-size:13px;margin:4px 0 13px}
+.card-icon{
+ width:44px;height:44px;border-radius:13px;
+ background:#eeeaff;color:var(--purple);
+ display:grid;place-items:center;font-size:21px;
+}
+.level-card{position:relative;overflow:hidden}
+.level-card:before{
+ content:"";position:absolute;right:-30px;top:-35px;
+ width:130px;height:130px;background:#eeeaff;border-radius:50%;
+}
+.level-card>*{position:relative}
+.level-number{font-size:12px;color:var(--purple);font-weight:850;letter-spacing:1px}
+.tag{
+ display:inline-block;padding:4px 9px;border-radius:30px;
+ font-size:10px;font-weight:800;background:#eeeaff;color:#664ed2;
+}
+.tag.free{background:#e4f7ef;color:#14845e}
+.tag.pro{background:#fff1d9;color:#98640a}
+.progress{
+ height:8px;background:#ececf3;border-radius:20px;overflow:hidden;margin:12px 0;
+}
+.progress div{height:100%;background:linear-gradient(90deg,#7458e8,#ad92ff);width:0%}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.feature{text-align:center}
+.feature .card-icon{margin:auto}
+.feature h3{font-size:15px}
+.searchbox{
+ display:flex;gap:10px;background:white;border:1px solid var(--border);
+ padding:9px 13px;border-radius:12px;align-items:center;
+}
+.searchbox input{border:0;outline:0;width:100%;min-width:0}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.toolbar select,.toolbar input,.field{
+ background:white;border:1px solid var(--border);padding:11px 13px;
+ border-radius:10px;color:var(--ink);outline-color:var(--purple);
+}
+.unit-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.unit{
+ background:white;border:1px solid var(--border);border-radius:13px;
+ padding:17px;display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.unit strong{font-size:14px;display:block}
+.unit small{color:var(--muted)}
+.unit button{white-space:nowrap}
+.hidden{display:none!important}
+.panel{
+ background:white;border:1px solid var(--border);
+ border-radius:18px;padding:25px;
+}
+.panel h2{margin-top:0}
+.note-content h3{margin-top:24px;color:#4c3ba4}
+.note-content p,.note-content li{font-size:14px;color:#555a71}
+.formula{
+ background:#f0edff;border-left:4px solid var(--purple);
+ padding:14px;border-radius:8px;margin:15px 0;font-weight:750;
+}
+.quiz-option{
+ width:100%;text-align:left;padding:14px;margin:6px 0;
+ border:1px solid var(--border);background:white;border-radius:10px;
+}
+.quiz-option:hover{border-color:var(--purple);background:#f8f6ff}
+.quiz-option.correct{background:#e4f7ef;border-color:var(--green)}
+.quiz-option.wrong{background:#fff0f0;border-color:var(--red)}
+.quiz-top{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}
+.answer-box{padding:15px;background:#f1efff;border-radius:10px;margin-top:15px}
+.flashcard{
+ min-height:220px;background:linear-gradient(135deg,#282451,#7055d7);
+ color:white;border-radius:18px;padding:30px;
+ display:flex;align-items:center;justify-content:center;text-align:center;
+ font-size:23px;font-weight:750;cursor:pointer;
+}
+.flashcard small{display:block;font-size:12px;color:#ddd4ff;margin-top:20px}
+.calc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.calc-result{background:#eeebff;border-radius:12px;padding:18px;margin-top:14px}
+.calc-result strong{font-size:25px;color:#5e45ce;display:block}
+.planner-row{display:grid;grid-template-columns:1fr 2fr auto;gap:10px;margin:10px 0}
+.task{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid var(--border)}
+.task input{accent-color:var(--purple)}
+.pricing{border:2px solid var(--purple);position:relative}
+.price{font-size:36px;font-weight:900;margin:12px 0}
+.price small{font-size:13px;color:var(--muted)}
+.checklist{padding:0;list-style:none;font-size:13px}
+.checklist li{padding:7px 0}
+.checklist li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}
+.notice{padding:13px 15px;background:#fff7e6;border:1px solid #f2dfa8;border-radius:10px;color:#74571a;font-size:12px}
+footer{background:var(--navy);color:white;margin-top:60px;padding:45px 5%}
+.footer-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
+footer p,footer a{font-size:12px;color:#c4c5d5}
+footer a{display:block;margin:9px 0}
+footer h3{font-size:14px}
+.modal{
+ position:fixed;inset:0;background:rgba(12,13,32,.7);z-index:100;
+ display:none;align-items:center;justify-content:center;padding:20px;
+}
+.modal.open{display:flex}
+.modal-box{
+ background:white;border-radius:18px;padding:25px;
+ max-width:650px;width:100%;max-height:85vh;overflow:auto;
+}
+.modal-head{display:flex;justify-content:space-between;align-items:center}
+.close{border:0;background:#eeeafd;border-radius:8px;padding:7px 12px}
+.toast{
+ position:fixed;bottom:20px;right:20px;background:#171a31;color:white;
+ padding:13px 19px;border-radius:12px;z-index:200;
+ box-shadow:var(--shadow);display:none;font-size:13px;
+}
+.toast.show{display:block}
+.empty{text-align:center;padding:35px;color:var(--muted)}
+@media(max-width:950px){
+ .grid4{grid-template-columns:repeat(2,1fr)}
+ .navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--border)}
+ .navlinks.open{display:flex}
+ .mobile-toggle{display:block}
+ .hero{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+ .container{padding:23px 4%}
+ .hero{padding:35px 23px}
+ .grid,.grid4,.unit-list,.calc-grid{grid-template-columns:1fr}
+ .section-head{align-items:flex-start;flex-direction:column}
+ .navright .outline{display:none}
+ .planner-row{grid-template-columns:1fr}
+ .footer-inner{grid-template-columns:1fr}
+ .hero-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="topbar">YOUR ACCOUNTING REVISION JOURNEY STARTS HERE <span>✦ Learn. Practise. Succeed.</span></div>
+
+<header>
+ <nav class="nav">
+  <a href="#home" class="logo">
+   <span class="logo-icon">Σ</span>
+   <span>AAT REVISION HUB<small>YOUR ACCOUNTING STUDY SPACE</small></span>
+  </a>
+  <div class="navlinks" id="navlinks">
+   <a href="#home">Home</a>
+   <a href="#levels">Qualifications</a>
+   <a href="#resources">Resources</a>
+   <a href="#tools">Tools</a>
+   <a href="#planner">Planner</a>
+   <a href="#pricing">Membership</a>
+  </div>
+  <div class="navright">
+   <button class="btn outline" onclick="showModal('accountModal')">My account</button>
+   <button class="btn primary" onclick="showModal('accountModal')">Get started</button>
+   <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+ </nav>
+</header>
+
+<main class="container" id="home">
+
+<section class="hero">
+ <div>
+  <div class="eyebrow">THE SMARTER WAY TO STUDY ACCOUNTING</div>
+  <h1>Your AAT journey.<br><span style="color:#b9a7ff">Your success.</span></h1>
+  <p>Everything you need to revise for AAT Levels 2, 3 and 4. Explore clear explanations, practise exam-style questions, master accounting formulas and track your progress.</p>
+  <div class="hero-actions">
+   <a href="#levels" class="btn primary">Explore qualifications →</a>
+   <a href="#resources" class="btn outline">Explore resources</a>
+  </div>
+ </div>
+ <div class="hero-stats">
+  <div class="stat"><strong>03</strong><small>AAT qualification levels</small></div>
+  <div class="stat"><strong>24/7</strong><small>Study whenever you like</small></div>
+  <div class="stat"><strong>100%</strong><small>Self-paced revision</small></div>
+  <div class="stat"><strong>∞</strong><small>Practice opportunities</small></div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head">
+  <div><h2>Welcome to your study space</h2><p>Your revision progress, all in one place.</p></div>
+  <span class="tag free">FREE STUDY TOOLS</span>
+ </div>
+ <div class="grid4">
+  <div class="card">
+   <div class="card-icon">📚</div>
+   <h3>Topics studied</h3>
+   <strong id="statTopics">0</strong>
+   <div class="progress"><div id="progressTopics"></div></div>
+   <small class="muted">Track completed topics</small>
+  </div>
+  <div class="card">
+   <div class="card-icon">🎯</div>
+   <h3>Quiz attempts</h3>
+   <strong id="statQuizzes">0</strong>
+   <div class="progress"><div id="progressQuizzes"></div></div>
+   <small class="muted">Keep practising</small>
+  </div>
+  <div class="card">
+   <div class="card-icon">⭐</div>
+   <h3>Best quiz score</h3>
+   <strong id="statBest">0%</strong>
+   <div class="progress"><div id="progressBest"></div></div>
+   <small class="muted">Your personal best</small>
+  </div>
+  <div class="card">
+   <div class="card-icon">🔥</div>
+   <h3>Study goal</h3>
+   <strong id="statTasks">0</strong>
+   <div class="progress"><div id="progressTasks"></div></div>
+   <small class="muted">Tasks completed</small>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="levels">
+ <div class="section-head">
+  <div><h2>Choose your AAT qualification</h2><p>Find resources organised around your level and units.</p></div>
+ </div>
+ <div class="grid">
+  <div class="card level-card">
+   <div class="level-number">FOUNDATION</div>
+   <h3>AAT Level 2</h3>
+   <p>Certificate in Accounting. Build your knowledge of bookkeeping, costing and business.</p>
+   <span class="tag free">Beginner friendly</span>
+   <div class="progress"><div id="level2progress"></div></div>
+   <button class="btn primary" onclick="selectLevel(2)">Explore Level 2 →</button>
+  </div>
+  <div class="card level-card">
+   <div class="level-number">ADVANCED</div>
+   <h3>AAT Level 3</h3>
+   <p>Diploma in Accounting. Develop advanced bookkeeping, financial accounting and management accounting skills.</p>
+   <span class="tag free">Intermediate</span>
+   <div class="progress"><div id="level3progress"></div></div>
+   <button class="btn primary" onclick="selectLevel(3)">Explore Level 3 →</button>
+  </div>
+  <div class="card level-card">
+   <div class="level-number">PROFESSIONAL</div>
+   <h3>AAT Level 4</h3>
+   <p>Diploma for Professional Accounting Technicians. Develop higher-level accounting and business expertise.</p>
+   <span class="tag pro">Advanced</span>
+   <div class="progress"><div id="level4progress"></div></div>
+   <button class="btn primary" onclick="selectLevel(4)">Explore Level 4 →</button>
+  </div>
+ </div>
+ <div class="notice" style="margin-top:15px">
+  Qualification information is based on AAT's current 2026 qualification structure. Students registered on earlier Level 4 qualifications may need different resources. Always check your own registration and assessment specification.
+ </div>
+</section>
+
+<section class="section" id="units">
+ <div class="section-head">
+  <div><h2 id="unitHeading">Explore your units</h2><p id="unitDescription">Select a qualification to see its study areas.</p></div>
+  <button class="btn outline" onclick="selectLevel(2)">Level 2</button>
+ </div>
+ <div class="toolbar">
+  <select id="levelFilter" onchange="renderUnits()">
+   <option value="2">Level 2</option>
+   <option value="3">Level 3</option>
+   <option value="4">Level 4</option>
+  </select>
+  <input id="unitSearch" placeholder="Search units..." oninput="renderUnits()">
+ </div>
+ <div class="unit-list" id="unitList"></div>
+</section>
+
+<section class="section" id="resources">
+ <div class="section-head">
+  <div><h2>Revision resources</h2><p>Choose how you want to learn today.</p></div>
+ </div>
+ <div class="toolbar">
+  <div class="searchbox" style="flex:1">
+   <span>⌕</span><input id="resourceSearch" placeholder="Search revision resources..." oninput="renderResources()">
+  </div>
+  <select id="resourceLevel" onchange="renderResources()">
+   <option value="all">All levels</option>
+   <option value="2">Level 2</option>
+   <option value="3">Level 3</option>
+   <option value="4">Level 4</option>
+  </select>
+ </div>
+ <div class="grid" id="resourceGrid"></div>
+</section>
+
+<section class="section" id="study">
+ <div class="section-head">
+  <div><h2>Interactive learning centre</h2><p>Learn actively and test your understanding.</p></div>
+ </div>
+ <div class="grid4">
+  <div class="card feature">
+   <div class="card-icon">🧠</div>
+   <h3>Flashcards</h3>
+   <p>Memorise important accounting terms and concepts.</p>
+   <button class="btn secondary" onclick="openFlashcards()">Start flashcards</button>
+  </div>
+  <div class="card feature">
+   <div class="card-icon">📝</div>
+   <h3>Practice quizzes</h3>
+   <p>Test your knowledge with instant feedback.</p>
+   <button class="btn secondary" onclick="startQuiz()">Start a quiz</button>
+  </div>
+  <div class="card feature">
+   <div class="card-icon">⏱️</div>
+   <h3>Timed practice</h3>
+   <p>Practise under timed conditions.</p>
+   <button class="btn secondary" onclick="startQuiz(true)">Timed test</button>
+  </div>
+  <div class="card feature">
+   <div class="card-icon">📖</div>
+   <h3>Study notes</h3>
+   <p>Read clear explanations and examples.</p>
+   <button class="btn secondary" onclick="openNotes('double-entry')">Read notes</button>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="tools">
+ <div class="section-head">
+  <div><h2>Accounting calculator suite</h2><p>Useful calculations for your accounting studies.</p></div>
+ </div>
+ <div class="grid">
+  <div class="panel">
+   <h3>VAT calculator</h3>
+   <p class="small muted">Calculate VAT at your chosen rate.</p>
+   <label class="small">Net amount</label>
+   <input class="field" id="vatNet" type="number" placeholder="100" style="width:100%">
+   <label class="small">VAT rate (%)</label>
+   <input class="field" id="vatRate" type="number" value="20" style="width:100%">
+   <button class="btn primary" style="margin-top:12px" onclick="calcVAT()">Calculate VAT</button>
+   <div class="calc-result hidden" id="vatResult"></div>
+  </div>
+  <div class="panel">
+   <h3>Gross profit calculator</h3>
+   <p class="small muted">Calculate gross profit and margin.</p>
+   <label class="small">Sales revenue (£)</label>
+   <input class="field" id="sales" type="number" placeholder="10000" style="width:100%">
+   <label class="small">Cost of sales (£)</label>
+   <input class="field" id="cost" type="number" placeholder="6000" style="width:100%">
+   <button class="btn primary" style="margin-top:12px" onclick="calcProfit()">Calculate</button>
+   <div class="calc-result hidden" id="profitResult"></div>
+  </div>
+  <div class="panel">
+   <h3>Depreciation calculator</h3>
+   <p class="small muted">Straight-line depreciation.</p>
+   <label class="small">Asset cost (£)</label>
+   <input class="field" id="assetCost" type="number" placeholder="10000" style="width:100%">
+   <label class="small">Residual value (£)</label>
+   <input class="field" id="residual" type="number" placeholder="1000" style="width:100%">
+   <label class="small">Useful life (years)</label>
+   <input class="field" id="life" type="number" placeholder="5" style="width:100%">
+   <button class="btn primary" style="margin-top:12px" onclick="calcDepreciation()">Calculate</button>
+   <div class="calc-result hidden" id="depreciationResult"></div>
+  </div>
+  <div class="panel">
+   <h3>Percentage calculator</h3>
+   <p class="small muted">Calculate a percentage of a number.</p>
+   <label class="small">Amount</label>
+   <input class="field" id="percentageAmount" type="number" placeholder="500" style="width:100%">
+   <label class="small">Percentage (%)</label>
+   <input class="field" id="percentageRate" type="number" placeholder="15" style="width:100%">
+   <button class="btn primary" style="margin-top:12px" onclick="calcPercentage()">Calculate</button>
+   <div class="calc-result hidden" id="percentageResult"></div>
+  </div>
+  <div class="panel">
+   <h3>Markup and margin</h3>
+   <p class="small muted">Work out selling price, markup and profit margin.</p>
+   <label class="small">Cost (£)</label>
+   <input class="field" id="mmCost" type="number" placeholder="60" style="width:100%">
+   <label class="small">Selling price (£)</label>
+   <input class="field" id="mmSelling" type="number" placeholder="100" style="width:100%">
+   <button class="btn primary" style="margin-top:12px" onclick="calcMarkup()">Calculate</button>
+   <div class="calc-result hidden" id="mmResult"></div>
+  </div>
+  <div class="panel">
+   <h3>Current ratio</h3>
+   <p class="small muted">Assess short-term liquidity.</p>
+   <label class="small">Current assets (£)</label>
+   <input class="field" id="currentAssets" type="number" placeholder="20000" style="width:100%">
+   <label class="small">Current liabilities (£)</label>
+   <input class="field" id="currentLiabilities" type="number" placeholder="10000" style="width:100%">
+   <button class="btn primary" style="margin-top:12px" onclick="calcRatio()">Calculate</button>
+   <div class="calc-result hidden" id="ratioResult"></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="formula">
+ <div class="section-head">
+  <div><h2>Essential accounting formulas</h2><p>Quick reference for common accounting calculations.</p></div>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>Gross profit</h3><div class="formula">Sales − Cost of sales</div><p>The profit made before operating expenses.</p></div>
+  <div class="card"><h3>Net profit</h3><div class="formula">Gross profit − Expenses</div><p>Profit remaining after expenses.</p></div>
+  <div class="card"><h3>Accounting equation</h3><div class="formula">Assets = Capital + Liabilities</div><p>The foundation of double-entry bookkeeping.</p></div>
+  <div class="card"><h3>Gross profit margin</h3><div class="formula">(Gross profit ÷ Revenue) × 100</div><p>Gross profit as a percentage of sales.</p></div>
+  <div class="card"><h3>Current ratio</h3><div class="formula">Current assets ÷ Current liabilities</div><p>Measures short-term liquidity.</p></div>
+  <div class="card"><h3>Straight-line depreciation</h3><div class="formula">(Cost − Residual value) ÷ Useful life</div><p>Annual depreciation expense.</p></div>
+  <div class="card"><h3>Markup percentage</h3><div class="formula">(Profit ÷ Cost) × 100</div><p>Profit measured against cost.</p></div>
+  <div class="card"><h3>Net profit margin</h3><div class="formula">(Net profit ÷ Revenue) × 100</div><p>Net profit as a percentage of sales.</p></div>
+ </div>
+</section>
+
+<section class="section" id="planner">
+ <div class="section-head">
+  <div><h2>Your revision planner</h2><p>Set your own study goals and keep organised.</p></div>
+ </div>
+ <div class="panel">
+  <h3>Add a revision task</h3>
+  <div class="planner-row">
+   <input class="field" id="taskName" placeholder="e.g. Revise bank reconciliation">
+   <input class="field" id="taskDate" type="date">
+   <button class="btn primary" onclick="addTask()">Add task +</button>
+  </div>
+  <div id="taskList"></div>
+ </div>
+</section>
+
+<section class="section" id="pricing">
+ <div class="section-head">
+  <div><h2>Choose your study experience</h2><p>Start free and upgrade when you're ready.</p></div>
+ </div>
+ <div class="grid">
+  <div class="card">
+   <span class="tag free">FREE FOREVER</span>
+   <h3>Free membership</h3>
+   <div class="price">£0 <small>/ forever</small></div>
+   <ul class="checklist">
+    <li>Selected revision notes</li>
+    <li>Basic quizzes</li>
+    <li>Flashcards</li>
+    <li>Accounting calculators</li>
+    <li>Basic revision planner</li>
+    <li>Local progress tracking</li>
+   </ul>
+   <button class="btn outline" onclick="showToast('You can start studying for free!')">Start for free</button>
+  </div>
+  <div class="card pricing">
+   <span class="tag pro">PREMIUM EXPERIENCE</span>
+   <h3>Premium membership</h3>
+   <div class="price">Coming soon</div>
+   <ul class="checklist">
+    <li>Extended revision libraries</li>
+    <li>Additional practice question banks</li>
+    <li>Advanced mock exams</li>
+    <li>Downloadable revision packs</li>
+    <li>Detailed topic tracking</li>
+    <li>Advanced study resources</li>
+    <li>Additional learning materials</li>
+   </ul>
+   <button class="btn primary" onclick="showToast('Premium membership is not yet available. No payment has been taken.')">Join the waiting list</button>
+  </div>
+ </div>
+ <p class="small muted">Premium features are displayed as a planned membership offering. Payments and subscriptions have not been activated.</p>
+</section>
+
+<section class="section">
+ <div class="panel">
+  <h2>Official AAT resources</h2>
+  <p class="muted small">Use the official AAT website to verify qualification specifications, assessment requirements and current learning materials.</p>
+  <div class="grid">
+   <div><h3>📘 Qualifications</h3><a class="btn secondary" href="https://www.aat.org.uk/qualifications-and-courses/accounting" target="_blank" rel="noopener">AAT qualifications ↗</a></div>
+   <div><h3>📄 Specifications</h3><a class="btn secondary" href="https://www.aat.org.uk/deliver/qualifications/specifications-outlines" target="_blank" rel="noopener">Qualification specifications ↗</a></div>
+   <div><h3>📝 Assessments</h3><a class="btn secondary" href="https://www.aat.org.uk/assessments" target="_blank" rel="noopener">Assessment information ↗</a></div>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <div class="footer-inner">
+  <div>
+   <div class="logo"><span class="logo-icon">Σ</span>AAT REVISION HUB</div>
+   <p>Your learning companion for accounting revision. Study smarter, practise regularly and work towards your goals.</p>
+   <p>Independent educational revision resource. Not affiliated with or endorsed by AAT.</p>
+  </div>
+  <div>
+   <h3>Explore</h3>
+   <a href="#levels">AAT qualifications</a>
+   <a href="#resources">Revision resources</a>
+   <a href="#tools">Calculators</a>
+   <a href="#planner">Study planner</a>
+  </div>
+  <div>
+   <h3>Information</h3>
+   <a href="#pricing">Membership</a>
+   <a href="https://www.aat.org.uk/" target="_blank" rel="noopener">Official AAT website</a>
+   <a href="mailto:hello@example.com">Contact us</a>
+  </div>
+ </div>
+ <div style="max-width:1250px;margin:30px auto 0;border-top:1px solid #343650;padding-top:18px">
+  <small style="color:#a9abc0">© <span id="year"></span> AAT Revision Hub. All rights reserved. Independent revision resource.</small>
+ </div>
+</footer>
+
+<!-- MODALS -->
+
+<div class="modal" id="accountModal">
+ <div class="modal-box">
+  <div class="modal-head"><h2>Welcome to AAT Revision Hub</h2><button class="close" onclick="closeModal('accountModal')">✕</button></div>
+  <p class="muted">Enter a display name to personalise your study space.</p>
+  <input class="field" id="studentName" placeholder="Your name" style="width:100%">
+  <button class="btn primary" style="margin-top:12px" onclick="saveName()">Save name</button>
+  <p class="small muted">This is a local browser profile, not a secure online account. Do not enter passwords or sensitive information.</p>
+ </div>
+</div>
+
+<div class="modal" id="contentModal">
+ <div class="modal-box">
+  <div class="modal-head"><h2 id="contentTitle">Study resource</h2><button class="close" onclick="closeModal('contentModal')">✕</button></div>
+  <div id="contentBody"></div>
+ </div>
+</div>
+
+<div class="modal" id="flashModal">
+ <div class="modal-box">
+  <div class="modal-head"><h2>Revision flashcards</h2><button class="close" onclick="closeModal('flashModal')">✕</button></div>
+  <p class="small muted" id="flashCount"></p>
+  <div class="flashcard" id="flashCard" onclick="flipCard()">Loading...</div>
+  <div style="display:flex;justify-content:space-between;gap:10px;margin-top:18px">
+   <button class="btn outline" onclick="previousCard()">← Previous</button>
+   <button class="btn primary" onclick="nextCard()">Next →</button>
+  </div>
+  <button class="btn secondary" style="width:100%;margin-top:10px" onclick="flipCard()">Flip card</button>
+ </div>
+</div>
+
+<div class="modal" id="quizModal">
+ <div class="modal-box">
+  <div class="modal-head"><h2>Knowledge check</h2><button class="close" onclick="closeModal('quizModal')">✕</button></div>
+  <div id="quizArea"></div>
+ </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+
+/* ========================================
+   AAT REVISION HUB - WEBSITE DATA
+======================================== */
+
+const units = {
+ 2:[
+  {name:"Introduction to Bookkeeping",code:"ITBK",desc:"Bookkeeping systems, transactions, documents and double entry."},
+  {name:"Principles of Bookkeeping Controls",code:"POBC",desc:"Control accounts, journals, reconciliations and trial balances."},
+  {name:"Principles of Costing",code:"POC",desc:"Cost recording, cost calculations and budget information."},
+  {name:"The Business Environment",code:"TBE",desc:"Business structures, legal environment, communication and ethics."}
+ ],
+ 3:[
+  {name:"Business Awareness",code:"BUAW",desc:"Business structures, the environment and professional awareness."},
+  {name:"Financial Accounting: Preparing Financial Statements",code:"FAPS",desc:"Financial records and the preparation of financial statements."},
+  {name:"Management Accounting Techniques",code:"MATS",desc:"Costing techniques, budgets and management accounting."},
+  {name:"Tax Processes for Businesses",code:"TPFB",desc:"Business tax processes and relevant tax responsibilities."}
+ ],
+ 4:[
+  {name:"Financial Accounting",code:"FNAC",desc:"Financial reporting frameworks, standards and company statements."},
+  {name:"Management Accounting",code:"MNAC",desc:"Planning, budgets, control, decision making and liquidity."},
+  {name:"Audit and Internal Controls",code:"ATIC",desc:"Internal controls, audit planning, evidence and reporting."},
+  {name:"Principles of Taxation",code:"POTX",desc:"UK Income Tax, National Insurance, CGT and Corporation Tax."},
+  {name:"Advanced Business Awareness",code:"AVBA",desc:"Strategy, business decisions, ethics, data and sustainability."}
+ ]
+};
+
+const notes = {
+ "double-entry":{
+  title:"Introduction to Double-Entry Bookkeeping",
+  level:2,
+  html:`
+  <div class="note-content">
+  <span class="tag free">LEVEL 2</span>
+  <h3>What is double-entry bookkeeping?</h3>
+  <p>Double-entry bookkeeping is a system where every financial transaction is recorded in at least two ledger accounts. Each transaction has equal debit and credit entries.</p>
+  <div class="formula">Total debits = Total credits</div>
+  <h3>The five main account categories</h3>
+  <ul>
+   <li><b>Assets:</b> Resources owned or controlled by a business.</li>
+   <li><b>Liabilities:</b> Amounts owed by the business.</li>
+   <li><b>Capital:</b> The owner's investment in the business.</li>
+   <li><b>Income:</b> Money earned through business activities.</li>
+   <li><b>Expenses:</b> Costs incurred while running the business.</li>
+  </ul>
+  <h3>Debit and credit rules</h3>
+  <p>Assets and expenses normally increase with a debit. Liabilities, capital and income normally increase with a credit.</p>
+  <div class="formula">Assets + Expenses increase → Debit<br>Liabilities + Capital + Income increase → Credit</div>
+  <h3>Worked example</h3>
+  <p>A business purchases equipment for £500 using its bank account.</p>
+  <p>Debit: Equipment £500</p>
+  <p>Credit: Bank £500</p>
+  <p>The equipment asset increases and the bank asset decreases. Both entries are equal.</p>
+  <h3>Remember</h3>
+  <p>Always identify the accounts affected before deciding which side to debit or credit.</p>
+  </div>`
+ },
+ "trial-balance":{
+  title:"Understanding the Trial Balance",
+  level:2,
+  html:`
+  <div class="note-content">
+  <h3>What is a trial balance?</h3>
+  <p>A trial balance is a list of ledger account balances at a particular date. Debit balances and credit balances are listed separately.</p>
+  <div class="formula">Total debit balances = Total credit balances</div>
+  <h3>Why prepare one?</h3>
+  <ul>
+   <li>Check the arithmetic accuracy of ledger balances.</li>
+   <li>Provide information for preparing financial statements.</li>
+   <li>Help identify certain bookkeeping errors.</li>
+  </ul>
+  <h3>Important limitation</h3>
+  <p>A balanced trial balance does not prove that every transaction has been recorded correctly. Errors of omission, principle and original entry may remain undetected.</p>
+  <h3>Example</h3>
+  <p>Bank £2,000 debit, sales £3,000 credit and expenses £1,000 debit. The total debit and credit entries are £3,000 each.</p>
+  </div>`
+ },
+ "vat":{
+  title:"Value Added Tax (VAT)",
+  level:2,
+  html:`
+  <div class="note-content">
+  <h3>What is VAT?</h3>
+  <p>VAT is a tax charged on many goods and services. A VAT-registered business generally accounts for output VAT on taxable sales and may recover eligible input VAT on purchases.</p>
+  <h3>Key terminology</h3>
+  <ul>
+   <li><b>Output VAT:</b> VAT charged on sales.</li>
+   <li><b>Input VAT:</b> VAT paid on purchases.</li>
+   <li><b>VAT control account:</b> Records VAT-related amounts.</li>
+  </ul>
+  <div class="formula">VAT payable = Output VAT − Recoverable input VAT</div>
+  <h3>Example using a 20% rate</h3>
+  <p>Net sale: £100. VAT: £20. Gross sale: £120.</p>
+  <p>VAT rates and recovery rules depend on the transaction and applicable legislation. Always verify current UK tax rules.</p>
+  </div>`
+ },
+ "costing":{
+  title:"Introduction to Costing",
+  level:2,
+  html:`
+  <div class="note-content">
+  <h3>Types of costs</h3>
+  <ul>
+   <li><b>Direct materials:</b> Materials used directly in producing a product.</li>
+   <li><b>Direct labour:</b> Labour directly involved in production.</li>
+   <li><b>Direct expenses:</b> Other directly traceable costs.</li>
+   <li><b>Indirect costs:</b> Costs that cannot easily be traced to one product.</li>
+  </ul>
+  <h3>Fixed and variable costs</h3>
+  <p>Fixed costs generally remain constant in total within a relevant range. Variable costs change in total with activity.</p>
+  <div class="formula">Prime cost = Direct materials + Direct labour + Direct expenses</div>
+  <h3>Example</h3>
+  <p>Materials £200, labour £100 and direct expenses £50. Prime cost = £350.</p>
+  </div>`
+ },
+ "accruals":{
+  title:"Accruals and Prepayments",
+  level:3,
+  html:`
+  <div class="note-content">
+  <h3>Accruals</h3>
+  <p>An accrual is an expense incurred in the accounting period but not yet paid or recorded in the normal payment records.</p>
+  <h3>Prepayments</h3>
+  <p>A prepayment is an amount paid in advance for a future accounting period. The portion relating to the future period is treated as an asset.</p>
+  <div class="formula">Expense for the period = Amount paid + Closing accrual − Closing prepayment</div>
+  <h3>Example</h3>
+  <p>Rent paid is £12,000. Closing accrual is £500 and closing prepayment is £1,000.</p>
+  <p>Expense = £12,000 + £500 − £1,000 = £11,500.</p>
+  </div>`
+ },
+ "depreciation":{
+  title:"Depreciation",
+  level:3,
+  html:`
+  <div class="note-content">
+  <h3>What is depreciation?</h3>
+  <p>Depreciation allocates the depreciable amount of a tangible non-current asset over its useful life.</p>
+  <h3>Straight-line method</h3>
+  <div class="formula">(Cost − Residual value) ÷ Useful life</div>
+  <h3>Reducing balance method</h3>
+  <p>Depreciation is calculated as a percentage of the asset's carrying amount at the start of the period.</p>
+  <h3>Example</h3>
+  <p>Cost £10,000, residual value £1,000, useful life 5 years.</p>
+  <p>Annual straight-line depreciation = £1,800.</p>
+  <h3>Remember</h3>
+  <p>Depreciation is an expense, but it is not itself a cash payment.</p>
+  </div>`
+ },
+ "budgets":{
+  title:"Budgets and Variances",
+  level:3,
+  html:`
+  <div class="note-content">
+  <h3>What is a budget?</h3>
+  <p>A budget is a financial plan for a future period. It helps organisations plan, coordinate and control operations.</p>
+  <h3>Variance analysis</h3>
+  <p>A variance is the difference between a budgeted figure and an actual figure.</p>
+  <div class="formula">Variance = Actual result − Budgeted result</div>
+  <p>For revenue, actual revenue above budget is normally favourable. For costs, actual costs below budget are normally favourable.</p>
+  <h3>Investigating variances</h3>
+  <ul>
+   <li>Check the size of the variance.</li>
+   <li>Identify possible causes.</li>
+   <li>Determine whether it is controllable.</li>
+   <li>Recommend appropriate action.</li>
+  </ul>
+  </div>`
+ },
+ "financial-statements":{
+  title:"Financial Statements",
+  level:4,
+  html:`
+  <div class="note-content">
+  <h3>Statement of profit or loss</h3>
+  <p>Reports income and expenses for an accounting period to determine profit or loss.</p>
+  <div class="formula">Profit = Income − Expenses</div>
+  <h3>Statement of financial position</h3>
+  <p>Shows assets, liabilities and equity at a particular date.</p>
+  <div class="formula">Assets = Equity + Liabilities</div>
+  <h3>Statement of cash flows</h3>
+  <p>Reports cash flows classified into operating, investing and financing activities.</p>
+  <h3>Financial reporting</h3>
+  <p>Financial statements should be prepared in accordance with the relevant reporting framework and applicable accounting standards.</p>
+  </div>`
+ },
+ "audit":{
+  title:"Audit and Internal Controls",
+  level:4,
+  html:`
+  <div class="note-content">
+  <h3>Internal controls</h3>
+  <p>Internal controls are processes designed to help an organisation manage risks and achieve its objectives.</p>
+  <h3>Examples</h3>
+  <ul>
+   <li>Segregation of duties.</li>
+   <li>Authorisation of transactions.</li>
+   <li>Physical security of assets.</li>
+   <li>Independent reconciliations.</li>
+   <li>Access restrictions.</li>
+  </ul>
+  <h3>Audit evidence</h3>
+  <p>Auditors obtain sufficient appropriate evidence to support their conclusions.</p>
+  <h3>Risk assessment</h3>
+  <p>Audit planning includes understanding the organisation and identifying areas where material misstatement may occur.</p>
+  <h3>Remember</h3>
+  <p>An effective control system reduces risk but cannot eliminate all risk.</p>
+  </div>`
+ },
+ "tax":{
+  title:"Principles of Taxation",
+  level:4,
+  html:`
+  <div class="note-content">
+  <h3>Types of taxation</h3>
+  <ul>
+   <li>Income Tax.</li>
+   <li>National Insurance contributions.</li>
+   <li>Capital Gains Tax.</li>
+   <li>Corporation Tax.</li>
+  </ul>
+  <h3>Taxable income</h3>
+  <p>Tax calculations require identifying relevant income, allowable deductions, reliefs and applicable rates.</p>
+  <h3>Corporation Tax</h3>
+  <p>Corporation Tax is charged on the taxable profits of companies, subject to the applicable rules.</p>
+  <h3>Important</h3>
+  <p>Tax rates, thresholds, allowances and rules change. Always check the correct Finance Act and assessment year for your examination.</p>
+  </div>`
+ },
+ "ethics":{
+  title:"Ethics in Accounting",
+  level:3,
+  html:`
+  <div class="note-content">
+  <h3>Professional ethics</h3>
+  <p>Accounting professionals must act with integrity, objectivity and professional competence.</p>
+  <ul>
+   <li><b>Integrity:</b> Be honest and straightforward.</li>
+   <li><b>Objectivity:</b> Avoid bias and conflicts of interest.</li>
+   <li><b>Professional competence:</b> Maintain knowledge and skills.</li>
+   <li><b>Confidentiality:</b> Protect information.</li>
+   <li><b>Professional behaviour:</b> Follow relevant laws and regulations.</li>
+  </ul>
+  <h3>Ethical threats</h3>
+  <p>Examples include self-interest, self-review, advocacy, familiarity and intimidation threats.</p>
+  <p>Identify threats and apply appropriate safeguards.</p>
+  </div>`
+ }
+};
+
+/* ========================================
+   FLASHCARDS AND QUIZ QUESTIONS
+======================================== */
+
+const flashcards = [
+ ["What is an asset?","A resource controlled by a business as a result of past events, expected to provide future economic benefits."],
+ ["What is a liability?","A present obligation of a business to transfer an economic resource as a result of past events."],
+ ["What is capital?","The owner's residual interest in the assets of a business after liabilities are deducted."],
+ ["What is double entry?","Recording each transaction with equal debit and credit entries."],
+ ["What is a trial balance?","A list of ledger account balances showing debit and credit totals."],
+ ["What is output VAT?","VAT charged by a VAT-registered business on its taxable sales."],
+ ["What is input VAT?","VAT paid on purchases, subject to applicable recovery rules."],
+ ["What is depreciation?","The systematic allocation of an asset's depreciable amount over its useful life."],
+ ["What is an accrual?","An expense incurred but not yet paid or recorded."],
+ ["What is a prepayment?","An amount paid in advance for a future accounting period."],
+ ["What is gross profit?","Revenue less cost of sales."],
+ ["What is a budget?","A financial plan for a future period."],
+ ["What is a variance?","The difference between an actual result and a budgeted or standard result."],
+ ["What is audit evidence?","Information used by an auditor to reach conclusions."],
+ ["What is segregation of duties?","Dividing responsibilities between different people to reduce errors and fraud risks."],
+ ["What is liquidity?","The ability of an organisation to meet its short-term obligations."],
+ ["What is the accounting equation?","Assets = Equity + Liabilities."],
+ ["What is a control account?","A general ledger account that summarises transactions recorded in a subsidiary ledger."],
+ ["What is the current ratio?","Current assets divided by current liabilities."],
+ ["What is prime cost?","Direct materials plus direct labour plus direct expenses."]
+];
+
+const questions = [
+ {level:2,q:"Which side of an account records an increase in an asset?",a:["Credit","Debit","Both sides","Neither side"],correct:1,why:"Assets normally increase on the debit side."},
+ {level:2,q:"What is the accounting equation?",a:["Assets = Liabilities − Capital","Assets = Capital + Liabilities","Profit = Assets + Expenses","Sales = Purchases + VAT"],correct:1,why:"Assets equal equity (capital) plus liabilities."},
+ {level:2,q:"A business purchases equipment using its bank account. Which accounts are affected?",a:["Equipment and bank","Sales and purchases","Capital and sales","VAT and wages"],correct:0,why:"Equipment increases and bank decreases."},
+ {level:2,q:"What is a trial balance primarily used for?",a:["Calculating VAT","Checking debit and credit totals","Calculating depreciation","Preparing invoices"],correct:1,why:"A trial balance lists ledger balances and checks their arithmetic equality."},
+ {level:2,q:"Which is a direct cost of manufacturing a product?",a:["Factory rent","Direct materials","Office electricity","Head office salaries"],correct:1,why:"Direct materials can be traced directly to the product."},
+ {level:2,q:"A net purchase is £100 with VAT at 20%. What is the gross amount?",a:["£100","£110","£120","£125"],correct:2,why:"VAT is £20, giving a gross amount of £120."},
+ {level:2,q:"What is a sales invoice used for?",a:["Recording a customer sale","Recording depreciation","Recording a bank loan","Recording wages"],correct:0,why:"A sales invoice documents goods or services supplied to a customer."},
+ {level:2,q:"Which account normally has a credit balance?",a:["Rent expense","Bank asset","Sales revenue","Motor expenses"],correct:2,why:"Income accounts normally have credit balances."},
+ {level:3,q:"What does depreciation allocate?",a:["Cash payments","The depreciable amount over useful life","The purchase price to sales","VAT over time"],correct:1,why:"Depreciation allocates the depreciable amount over an asset's useful life."},
+ {level:3,q:"An asset costs £10,000, has residual value £1,000 and a five-year life. What is annual straight-line depreciation?",a:["£1,000","£1,800","£2,000","£2,200"],correct:1,why:"(£10,000 − £1,000) ÷ 5 = £1,800."},
+ {level:3,q:"What is an accrual?",a:["Cash received in advance","Expense incurred but not yet paid","An asset purchased","A capital contribution"],correct:1,why:"An accrual recognises an expense in the period it relates to."},
+ {level:3,q:"What is a favourable cost variance generally?",a:["Actual cost is above budget","Actual cost is below budget","Budget equals actual","Revenue is below budget"],correct:1,why:"Spending less than budget for the same activity is generally favourable."},
+ {level:3,q:"What is the purpose of a budget?",a:["To plan and control financial activity","To remove all business risks","To calculate historical VAT only","To replace financial statements"],correct:0,why:"Budgets help with planning, coordination and control."},
+ {level:3,q:"Which is an example of a professional ethical principle?",a:["Personal gain","Confidentiality","Favouritism","Ignoring regulations"],correct:1,why:"Confidentiality is a fundamental professional ethical principle."},
+ {level:3,q:"A business has revenue of £20,000 and cost of sales of £12,000. What is gross profit?",a:["£8,000","£12,000","£20,000","£32,000"],correct:0,why:"£20,000 − £12,000 = £8,000."},
+ {level:4,q:"What does a statement of financial position show?",a:["Profit over a year","Assets, liabilities and equity at a date","Cash receipts only","Sales forecasts"],correct:1,why:"It presents the entity's financial position at a specific date."},
+ {level:4,q:"Which three categories are used in a statement of cash flows?",a:["Assets, liabilities, capital","Operating, investing, financing","Sales, purchases, expenses","Profit, tax, dividends"],correct:1,why:"Cash flows are classified into operating, investing and financing activities."},
+ {level:4,q:"What is segregation of duties designed to help prevent?",a:["All business expenses","Errors and fraud","All accounting estimates","Depreciation"],correct:1,why:"Separating duties helps reduce the opportunity for errors and fraud."},
+ {level:4,q:"What is audit evidence?",a:["An auditor's personal opinion","Information supporting audit conclusions","Only bank statements","Only management forecasts"],correct:1,why:"Audit evidence supports the auditor's opinion and conclusions."},
+ {level:4,q:"What does the current ratio measure?",a:["Profitability","Short-term liquidity","Long-term growth","Employee productivity"],correct:1,why:"It compares current assets with current liabilities."},
+ {level:4,q:"Which is a fundamental professional ethical principle?",a:["Self-interest","Integrity","Aggressive selling","Concealment"],correct:1,why:"Integrity is one of the fundamental ethical principles."},
+ {level:4,q:"What is the purpose of risk assessment in an audit?",a:["To guarantee no errors exist","To identify and assess risks of material misstatement","To calculate sales revenue","To prepare the tax return"],correct:1,why:"Risk assessment informs the design and performance of audit procedures."}
+];
+
+/* ========================================
+   LOCAL STORAGE AND STATE
+======================================== */
+
+function getData(key,fallback){
+ try{
+  const value=localStorage.getItem("aatHub_"+key);
+  return value===null?fallback:JSON.parse(value);
+ }catch(e){return fallback}
+}
+function saveData(key,value){
+ try{localStorage.setItem("aatHub_"+key,JSON.stringify(value))}
+ catch(e){showToast("Browser storage unavailable.")}
+}
+let completed=getData("completed",[]);
+let quizHistory=getData("quizHistory",[]);
+let tasks=getData("tasks",[]);
+let student=getData("student","Student");
+let currentFlash=0,flipped=false;
+let quizQuestions=[],quizIndex=0,quizScore=0,quizTimer=null,timeLeft=0;
+let answered=false;
+
+function showToast(message){
+ const t=document.getElementById("toast");
+ t.textContent=message;t.classList.add("show");
+ setTimeout(()=>t.classList.remove("show"),2600);
+}
+function showModal(id){document.getElementById(id).classList.add("open")}
+function closeModal(id){document.getElementById(id).classList.remove("open")}
+function toggleMenu(){document.getElementById("navlinks").classList.toggle("open")}
+function selectLevel(level){
+ document.getElementById("levelFilter").value=level;
+ document.getElementById("unitSearch").value="";
+ renderUnits();
+ document.getElementById("units").scrollIntoView({behavior:"smooth"});
+}
+function saveName(){
+ const n=document.getElementById("studentName").value.trim();
+ if(!n)return showToast("Please enter a name.");
+ student=n;saveData("student",student);
+ closeModal("accountModal");showToast("Welcome, "+student+"!");
+}
+
+/* ========================================
+   UNIT AND RESOURCE RENDERING
+======================================== */
+
+function renderUnits(){
+ const level=document.getElementById("levelFilter").value;
+ const search=document.getElementById("unitSearch").value.toLowerCase();
+ const list=units[level].filter(u=>(u.name+" "+u.code+" "+u.desc).toLowerCase().includes(search));
+ document.getElementById("unitHeading").textContent="AAT Level "+level+" units";
+ document.getElementById("unitDescription").textContent="Select a unit to explore its topics and learning resources.";
+ document.getElementById("unitList").innerHTML=list.map(u=>`
+ <div class="unit">
+  <div><strong>${u.name}</strong><small>${u.code} · Level ${level}</small><div class="small muted">${u.desc}</div></div>
+  <button class="btn secondary" onclick="showUnit('${u.code}',${level})">Explore →</button>
+ </div>`).join("")||'<div class="empty">No units found.</div>';
+}
+
+const resources=[
+ {title:"Double-entry bookkeeping",desc:"Understand debits, credits and ledger entries.",icon:"📒",level:2,note:"double-entry",type:"Notes",premium:false},
+ {title:"Trial balances",desc:"Learn how to prepare and understand trial balances.",icon:"⚖️",level:2,note:"trial-balance",type:"Notes",premium:false},
+ {title:"VAT fundamentals",desc:"Understand input VAT, output VAT and VAT calculations.",icon:"🧾",level:2,note:"vat",type:"Notes",premium:false},
+ {title:"Introduction to costing",desc:"Explore direct, indirect, fixed and variable costs.",icon:"📊",level:2,note:"costing",type:"Notes",premium:false},
+ {title:"Accruals and prepayments",desc:"Understand period-end adjustments.",icon:"📅",level:3,note:"accruals",type:"Notes",premium:false},
+ {title:"Depreciation",desc:"Study straight-line and reducing balance methods.",icon:"📉",level:3,note:"depreciation",type:"Notes",premium:false},
+ {title:"Budgets and variances",desc:"Explore budget preparation and variance analysis.",icon:"📈",level:3,note:"budgets",type:"Notes",premium:false},
+ {title:"Professional ethics",desc:"Learn ethical principles and threats.",icon:"🤝",level:3,note:"ethics",type:"Notes",premium:false},
+ {title:"Financial statements",desc:"Understand company financial reporting.",icon:"📑",level:4,note:"financial-statements",type:"Notes",premium:false},
+ {title:"Audit and internal controls",desc:"Explore risk, controls and audit evidence.",icon:"🔍",level:4,note:"audit",type:"Notes",premium:false},
+ {title:"Principles of taxation",desc:"Explore the main UK taxation areas.",icon:"🏛️",level:4,note:"tax",type:"Notes",premium:false},
+ {title:"Advanced practice question bank",desc:"Additional topic-based questions and explanations.",icon:"🎓",level:4,note:"audit",type:"Premium preview",premium:true}
+];
+
+function renderResources(){
+ const search=document.getElementById("resourceSearch").value.toLowerCase();
+ const level=document.getElementById("resourceLevel").value;
+ const list=resources.filter(r=>
+  (r.title+" "+r.desc).toLowerCase().includes(search)&&
+  (level==="all"||String(r.level)===level)
+ );
+ document.getElementById("resourceGrid").innerHTML=list.map(r=>`
+ <div class="card">
+  <div class="card-icon">${r.icon}</div>
+  <div style="margin-top:12px"><span class="tag">LEVEL ${r.level}</span> <span class="tag ${r.premium?'pro':'free'}">${r.premium?'PREMIUM PREVIEW':'FREE'}</span></div>
+  <h3>${r.title}</h3><p>${r.desc}</p>
+  <button class="btn secondary" onclick="openNotes('${r.note}')">Open resource →</button>
+ </div>`).join("")||'<div class="empty">No matching resources.</div>';
+}
+function showUnit(code,level){
+ const unit=units[level].find(u=>u.code===code);
+ document.getElementById("contentTitle").textContent=unit.name;
+ document.getElementById("contentBody").innerHTML=`
+ <span class="tag">LEVEL ${level}</span>
+ <p>${unit.desc}</p>
+ <h3>Suggested revision activities</h3>
+ <ul>
+ <li>Read the official unit specification.</li>
+ <li>Create a summary of the learning outcomes.</li>
+ <li>Make flashcards for important terminology.</li>
+ <li>Complete practice questions.</li>
+ <li>Review mistakes and revise weaker areas.</li>
+ </ul>
+ <button class="btn primary" onclick="markComplete('${code}');closeModal('contentModal')">Mark unit as revised ✓</button>
+ <p class="small muted">This is a revision checklist, not an official unit specification.</p>`;
+ showModal("contentModal");
+}
+function openNotes(key){
+ const note=notes[key];
+ if(!note)return showToast("Resource not available yet.");
+ document.getElementById("contentTitle").textContent=note.title;
+ document.getElementById("contentBody").innerHTML=note.html+
+ `<button class="btn primary" style="margin-top:15px" onclick="markComplete('${key}');closeModal('contentModal')">Mark as revised ✓</button>`;
+ showModal("contentModal");
+}
+function markComplete(key){
+ if(!completed.includes(key)){completed.push(key);saveData("completed",completed)}
+ updateDashboard();showToast("Revision progress saved!");
+}
+
+/* ========================================
+   FLASHCARDS
+======================================== */
+
+function openFlashcards(){
+ currentFlash=0;flipped=false;renderFlash();
+ showModal("flashModal");
+}
+function renderFlash(){
+ const f=flashcards[currentFlash];
+ document.getElementById("flashCount").textContent=`Card ${currentFlash+1} of ${flashcards.length}`;
+ document.getElementById("flashCard").innerHTML=flipped?
+ `<div>${f[1]}<small>ANSWER · CLICK TO FLIP BACK</small></div>`:
+ `<div>${f[0]}<small>QUESTION · CLICK TO REVEAL ANSWER</small></div>`;
+}
+function flipCard(){flipped=!flipped;renderFlash()}
+function nextCard(){currentFlash=(currentFlash+1)%flashcards.length;flipped=false;renderFlash()}
+function previousCard(){currentFlash=(currentFlash-1+flashcards.length)%flashcards.length;flipped=false;renderFlash()}
+
+/* ========================================
+   QUIZ ENGINE
+======================================== */
+
+function startQuiz(timed=false){
+ clearInterval(quizTimer);
+ const level=document.getElementById("levelFilter").value;
+ let available=questions.filter(q=>q.level==level);
+ available=available.sort(()=>Math.random()-.5).slice(0,Math.min(10,available.length));
+ if(!available.length)return showToast("No questions available.");
+ quizQuestions=available;quizIndex=0;quizScore=0;answered=false;
+ timeLeft=timed?300:0;
+ showModal("quizModal");
+ renderQuestion();
+ if(timed){
+  quizTimer=setInterval(()=>{
+   timeLeft--;
+   const timer=document.getElementById("timer");
+   if(timer)timer.textContent="Time left: "+Math.floor(timeLeft/60)+":"+String(timeLeft%60).padStart(2,"0");
+   if(timeLeft<=0)finishQuiz();
+  },1000);
+ }
+}
+function renderQuestion(){
+ if(quizIndex>=quizQuestions.length)return finishQuiz();
+ const q=quizQuestions[quizIndex];
+ answered=false;
+ document.getElementById("quizArea").innerHTML=`
+ <div class="quiz-top"><span>Question ${quizIndex+1} / ${quizQuestions.length}</span>
+ <span id="timer">${timeLeft?"Time left: 05:00":"Practice mode"}</span></div>
+ <div class="progress"><div style="width:${quizIndex/quizQuestions.length*100}%"></div></div>
+ <span class="tag">LEVEL ${q.level}</span>
+ <h3 style="margin-top:20px">${q.q}</h3>
+ <div id="options">
+ ${q.a.map((a,i)=>`<button class="quiz-option" onclick="answerQuestion(${i})">${String.fromCharCode(65+i)}. ${a}</button>`).join("")}
+ </div>
+ <div id="feedback"></div>
+ <button class="btn primary hidden" id="nextQuestion" style="margin-top:15px" onclick="nextQuestion()">Next question →</button>`;
+}
+function answerQuestion(choice){
+ if(answered)return;
+ answered=true;
+ const q=quizQuestions[quizIndex];
+ const buttons=document.querySelectorAll("#options button");
+ buttons.forEach((b,i)=>{
+  if(i===q.correct)b.classList.add("correct");
+  else if(i===choice)b.classList.add("wrong");
+  b.disabled=true;
+ });
+ if(choice===q.correct)quizScore++;
+ document.getElementById("feedback").innerHTML=`
+ <div class="answer-box"><b>${choice===q.correct?"Correct! ✓":"Not quite."}</b><p>${q.why}</p></div>`;
+ document.getElementById("nextQuestion").classList.remove("hidden");
+}
+function nextQuestion(){quizIndex++;renderQuestion()}
+function finishQuiz(){
+ clearInterval(quizTimer);
+ const total=quizQuestions.length||1;
+ const percent=Math.round(quizScore/total*100);
+ quizHistory.push({score:percent,date:new Date().toISOString()});
+ saveData("quizHistory",quizHistory);
+ document.getElementById("quizArea").innerHTML=`
+ <div style="text-align:center;padding:25px 0">
+ <div style="font-size:50px">🏆</div>
+ <h2>Quiz complete!</h2>
+ <div style="font-size:48px;font-weight:900;color:var(--purple)">${percent}%</div>
+ <p>You scored ${quizScore} out of ${total}.</p>
+ <p>${percent>=80?"Excellent work! Keep it up.":percent>=50?"Good effort. Review the explanations and try again.":"Keep practising. Every attempt helps you improve."}</p>
+ <button class="btn primary" onclick="startQuiz()">Try another quiz</button>
+ <button class="btn outline" onclick="closeModal('quizModal')">Close</button>
+ </div>`;
+ updateDashboard();
+}
+
+/* ========================================
+   CALCULATORS
+======================================== */
+
+function num(id){return Number(document.getElementById(id).value)}
+function output(id,html){
+ const e=document.getElementById(id);e.innerHTML=html;e.classList.remove("hidden");
+}
+function money(n){return "£"+n.toLocaleString("en-GB",{minimumFractionDigits:2,maximumFractionDigits:2})}
+function calcVAT(){
+ const net=num("vatNet"),rate=num("vatRate");
+ if(net<0||rate<0||!Number.isFinite(net+rate))return showToast("Enter valid positive values.");
+ const vat=net*rate/100;
+ output("vatResult",`VAT: <b>${money(vat)}</b><br>Gross amount: <b>${money(net+vat)}</b>`);
+}
+function calcProfit(){
+ const sales=num("sales"),cost=num("cost");
+ if(sales<=0||cost<0)return showToast("Enter valid figures.");
+ const gp=sales-cost;
+ output("profitResult",`Gross profit: <b>${money(gp)}</b><br>Gross profit margin: <b>${(gp/sales*100).toFixed(2)}%</b>`);
+}
+function calcDepreciation(){
+ const cost=num("assetCost"),res=num("residual"),life=num("life");
+ if(cost<0||res<0||res>cost||life<=0)return showToast("Check your asset figures.");
+ output("depreciationResult",`Annual depreciation: <b>${money((cost-res)/life)}</b>`);
+}
+function calcPercentage(){
+ const amount=num("percentageAmount"),rate=num("percentageRate");
+ if(!Number.isFinite(amount+rate))return showToast("Enter valid values.");
+ output("percentageResult",`${rate}% of ${money(amount)} = <b>${money(amount*rate/100)}</b>`);
+}
+function calcMarkup(){
+ const cost=num("mmCost"),selling=num("mmSelling");
+ if(cost<=0||selling<0)return showToast("Enter valid figures.");
+ const profit=selling-cost;
+ output("mmResult",`Profit: <b>${money(profit)}</b><br>Markup: <b>${(profit/cost*100).toFixed(2)}%</b><br>Margin: <b>${selling? (profit/selling*100).toFixed(2):"0.00"}%</b>`);
+}
+function calcRatio(){
+ const assets=num("currentAssets"),liabilities=num("currentLiabilities");
+ if(assets<0||liabilities<=0)return showToast("Current liabilities must be greater than zero.");
+ output("ratioResult",`Current ratio: <b>${(assets/liabilities).toFixed(2)} : 1</b>`);
+}
+
+/* ========================================
+   REVISION PLANNER
+======================================== */
+
+function addTask(){
+ const name=document.getElementById("taskName").value.trim();
+ const date=document.getElementById("taskDate").value;
+ if(!name)return showToast("Enter a revision task.");
+ tasks.push({id:Date.now(),name,date,done:false});
+ saveData("tasks",tasks);
+ document.getElementById("taskName").value="";
+ renderTasks();updateDashboard();
+ showToast("Revision task added!");
+}
+function toggleTask(id){
+ tasks=tasks.map(t=>t.id===id?{...t,done:!t.done}:t);
+ saveData("tasks",tasks);renderTasks();updateDashboard();
+}
+function deleteTask(id){
+ tasks=tasks.filter(t=>t.id!==id);
+ saveData("tasks",tasks);renderTasks();updateDashboard();
+}
+function renderTasks(){
+ const list=document.getElementById("taskList");
+ if(!tasks.length){list.innerHTML='<div class="empty">No revision tasks yet. Add your first task above.</div>';return}
+ list.innerHTML=tasks.map(t=>`
+ <div class="task">
+ <input type="checkbox" ${t.done?"checked":""} onchange="toggleTask(${t.id})">
+ <div style="flex:1"><b style="${t.done?"text-decoration:line-through;color:gray":""}">${escapeHTML(t.name)}</b>
+ <div class="small muted">${t.date||"No deadline"}</div></div>
+ <button class="btn danger" onclick="deleteTask(${t.id})">Delete</button>
+ </div>`).join("");
+}
+function escapeHTML(s){
+ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+/* ========================================
+   DASHBOARD
+======================================== */
+
+function updateDashboard(){
+ document.getElementById("statTopics").textContent=completed.length;
+ document.getElementById("statQuizzes").textContent=quizHistory.length;
+ const best=quizHistory.length?Math.max(...quizHistory.map(q=>q.score)):0;
+ document.getElementById("statBest").textContent=best+"%";
+ const done=tasks.filter(t=>t.done).length;
+ document.getElementById("statTasks").textContent=done+"/"+tasks.length;
+ document.getElementById("progressTopics").style.width=Math.min(100,completed.length/20*100)+"%";
+ document.getElementById("progressQuizzes").style.width=Math.min(100,quizHistory.length*10)+"%";
+ document.getElementById("progressBest").style.width=best+"%";
+ document.getElementById("progressTasks").style.width=(tasks.length?done/tasks.length*100:0)+"%";
+ [2,3,4].forEach(level=>{
+  const total=units[level].length;
+  const count=units[level].filter(u=>completed.includes(u.code)).length;
+  document.getElementById("level"+level+"progress").style.width=count/total*100+"%";
+ });
+}
+
+/* ========================================
+   INITIALISE
+======================================== */
+
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("studentName").value=student;
+document.getElementById("levelFilter").value="2";
+document.getElementById("taskDate").min=new Date().toISOString().split("T")[0];
+
+renderUnits();
+renderResources();
+renderTasks();
+updateDashboard();
+
+</script>
+</body>
+</html>
