@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#11152b">
+<meta name="theme-color" content="#190b0d">
 <meta name="description" content="AAT Revision Hub - free and premium accounting revision notes, quizzes, flashcards, practice questions, calculators and study resources for AAT Levels 2, 3 and 4.">
 <meta name="keywords" content="AAT revision, AAT Level 2, AAT Level 3, AAT Level 4, accounting revision, bookkeeping, accounting quizzes">
 <meta name="author" content="AAT Revision Hub">
-<link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/">
+<link rel="canonical" href="https://hd2bg.github.io/aat-revision-hub/">
 <title>AAT Revision Hub | Accounting Revision & Study Resources</title>
 
 <style>
@@ -16,11 +15,11 @@
   --bg:#f5f6fb;
   --surface:#ffffff;
   --surface2:#f0f1fa;
-  --ink:#171a31;
+  --ink:#1b0c0e;
   --muted:#74788f;
-  --purple:#7458e8;
-  --purple2:#927cf4;
-  --navy:#11152b;
+  --purple:#c62828;
+  --purple2:#ef4444;
+  --navy:#190b0d;
   --border:#e7e8f0;
   --green:#15966d;
   --red:#df555d;
@@ -40,7 +39,7 @@ a{color:inherit;text-decoration:none}
  background:var(--navy);color:white;padding:9px 5%;
  text-align:center;font-size:12px;letter-spacing:.3px;
 }
-.topbar span{color:#c6baff}
+.topbar span{color:#ffb8b8}
 header{
  background:white;border-bottom:1px solid var(--border);
  position:sticky;top:0;z-index:50;
@@ -51,10 +50,16 @@ header{
 }
 .logo{display:flex;align-items:center;gap:11px;font-weight:850;font-size:19px}
 .logo-icon{
- width:42px;height:42px;border-radius:13px;
+ width:44px;height:44px;border-radius:13px;
  display:grid;place-items:center;color:white;
- background:linear-gradient(135deg,#7458e8,#a58bff);
- font-size:20px;
+ background:linear-gradient(145deg,#ef4444 0%,#a71922 58%,#650d16 100%);
+ box-shadow:0 6px 15px rgba(185,28,28,.25),inset 0 1px 0 rgba(255,255,255,.25);
+ font-size:23px;font-weight:950;font-style:italic;position:relative;
+ letter-spacing:-2px;padding-right:3px;
+}
+.logo-icon:after{
+ content:"";position:absolute;left:12px;right:9px;bottom:9px;
+ height:3px;border-radius:3px;background:#fff;opacity:.95;
 }
 .logo small{display:block;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:1px}
 .navlinks{display:flex;gap:20px;align-items:center;font-size:13px;font-weight:650}
@@ -66,7 +71,7 @@ header{
 }
 .btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
 .primary{background:var(--purple);color:white}
-.secondary{background:#eeeafd;color:#6249d2}
+.secondary{background:#fce7e7;color:#a71922}
 .dark{background:var(--navy);color:white}
 .outline{background:white;border:1px solid var(--border);color:var(--ink)}
 .success{background:#e4f7ef;color:#117c58}
@@ -74,7 +79,7 @@ header{
 .mobile-toggle{display:none;background:none;border:0;font-size:24px}
 .container{max-width:1300px;margin:auto;padding:35px 4%}
 .hero{
- background:linear-gradient(115deg,#11152b,#24254e 65%,#493b86);
+ background:linear-gradient(115deg,#190b0d,#3a1116 65%,#8f1723);
  border-radius:25px;padding:55px 6%;color:white;
  display:grid;grid-template-columns:1.5fr 1fr;gap:30px;
  position:relative;overflow:hidden;
@@ -84,11 +89,11 @@ header{
  background:rgba(153,125,255,.13);right:-100px;top:-120px;
 }
 .eyebrow{
- color:#c5b7ff;text-transform:uppercase;letter-spacing:2px;
+ color:#ffc1c1;text-transform:uppercase;letter-spacing:2px;
  font-size:11px;font-weight:800;
 }
 .hero h1{font-size:clamp(34px,5vw,58px);line-height:1.12;margin:17px 0}
-.hero p{color:#d0d0e5;max-width:600px;font-size:16px}
+.hero p{color:#f0dada;max-width:600px;font-size:16px}
 .hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:25px}
 .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:center;z-index:1}
 .stat{
@@ -96,7 +101,7 @@ header{
  border:1px solid rgba(255,255,255,.13);border-radius:16px;
 }
 .stat strong{display:block;font-size:27px}
-.stat small{color:#d4d0e8}
+.stat small{color:#f1dada}
 .section{margin-top:43px}
 .section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}
 .section-head h2{font-size:25px;margin:0}
@@ -111,26 +116,26 @@ header{
 .card p{color:var(--muted);font-size:13px;margin:4px 0 13px}
 .card-icon{
  width:44px;height:44px;border-radius:13px;
- background:#eeeaff;color:var(--purple);
+ background:#fde8e8;color:var(--purple);
  display:grid;place-items:center;font-size:21px;
 }
 .level-card{position:relative;overflow:hidden}
 .level-card:before{
  content:"";position:absolute;right:-30px;top:-35px;
- width:130px;height:130px;background:#eeeaff;border-radius:50%;
+ width:130px;height:130px;background:#fde8e8;border-radius:50%;
 }
 .level-card>*{position:relative}
 .level-number{font-size:12px;color:var(--purple);font-weight:850;letter-spacing:1px}
 .tag{
  display:inline-block;padding:4px 9px;border-radius:30px;
- font-size:10px;font-weight:800;background:#eeeaff;color:#664ed2;
+ font-size:10px;font-weight:800;background:#fde8e8;color:#a71922;
 }
 .tag.free{background:#e4f7ef;color:#14845e}
 .tag.pro{background:#fff1d9;color:#98640a}
 .progress{
  height:8px;background:#ececf3;border-radius:20px;overflow:hidden;margin:12px 0;
 }
-.progress div{height:100%;background:linear-gradient(90deg,#7458e8,#ad92ff);width:0%}
+.progress div{height:100%;background:linear-gradient(90deg,#c62828,#ff8a8a);width:0%}
 .muted{color:var(--muted)}
 .small{font-size:12px}
 .feature{text-align:center}
@@ -160,31 +165,31 @@ header{
  border-radius:18px;padding:25px;
 }
 .panel h2{margin-top:0}
-.note-content h3{margin-top:24px;color:#4c3ba4}
+.note-content h3{margin-top:24px;color:#9f1d27}
 .note-content p,.note-content li{font-size:14px;color:#555a71}
 .formula{
- background:#f0edff;border-left:4px solid var(--purple);
+ background:#fff0f0;border-left:4px solid var(--purple);
  padding:14px;border-radius:8px;margin:15px 0;font-weight:750;
 }
 .quiz-option{
  width:100%;text-align:left;padding:14px;margin:6px 0;
  border:1px solid var(--border);background:white;border-radius:10px;
 }
-.quiz-option:hover{border-color:var(--purple);background:#f8f6ff}
+.quiz-option:hover{border-color:var(--purple);background:#fff7f7}
 .quiz-option.correct{background:#e4f7ef;border-color:var(--green)}
 .quiz-option.wrong{background:#fff0f0;border-color:var(--red)}
 .quiz-top{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}
-.answer-box{padding:15px;background:#f1efff;border-radius:10px;margin-top:15px}
+.answer-box{padding:15px;background:#fff0f0;border-radius:10px;margin-top:15px}
 .flashcard{
- min-height:220px;background:linear-gradient(135deg,#282451,#7055d7);
+ min-height:220px;background:linear-gradient(135deg,#3a1116,#c62828);
  color:white;border-radius:18px;padding:30px;
  display:flex;align-items:center;justify-content:center;text-align:center;
  font-size:23px;font-weight:750;cursor:pointer;
 }
-.flashcard small{display:block;font-size:12px;color:#ddd4ff;margin-top:20px}
+.flashcard small{display:block;font-size:12px;color:#ffdada;margin-top:20px}
 .calc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
-.calc-result{background:#eeebff;border-radius:12px;padding:18px;margin-top:14px}
-.calc-result strong{font-size:25px;color:#5e45ce;display:block}
+.calc-result{background:#fff0f0;border-radius:12px;padding:18px;margin-top:14px}
+.calc-result strong{font-size:25px;color:#b91c1c;display:block}
 .planner-row{display:grid;grid-template-columns:1fr 2fr auto;gap:10px;margin:10px 0}
 .task{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid var(--border)}
 .task input{accent-color:var(--purple)}
@@ -210,9 +215,9 @@ footer h3{font-size:14px}
  max-width:650px;width:100%;max-height:85vh;overflow:auto;
 }
 .modal-head{display:flex;justify-content:space-between;align-items:center}
-.close{border:0;background:#eeeafd;border-radius:8px;padding:7px 12px}
+.close{border:0;background:#fce7e7;border-radius:8px;padding:7px 12px}
 .toast{
- position:fixed;bottom:20px;right:20px;background:#171a31;color:white;
+ position:fixed;bottom:20px;right:20px;background:#1b0c0e;color:white;
  padding:13px 19px;border-radius:12px;z-index:200;
  box-shadow:var(--shadow);display:none;font-size:13px;
 }
@@ -244,7 +249,7 @@ footer h3{font-size:14px}
 <header>
  <nav class="nav">
   <a href="#home" class="logo">
-   <span class="logo-icon">Σ</span>
+   <span class="logo-icon" aria-label="AAT logo">A</span>
    <span>AAT REVISION HUB<small>YOUR ACCOUNTING STUDY SPACE</small></span>
   </a>
   <div class="navlinks" id="navlinks">
@@ -268,7 +273,7 @@ footer h3{font-size:14px}
 <section class="hero">
  <div>
   <div class="eyebrow">THE SMARTER WAY TO STUDY ACCOUNTING</div>
-  <h1>Your AAT journey.<br><span style="color:#b9a7ff">Your success.</span></h1>
+  <h1>Your AAT journey.<br><span style="color:#ff7777">Your success.</span></h1>
   <p>Everything you need to revise for AAT Levels 2, 3 and 4. Explore clear explanations, practise exam-style questions, master accounting formulas and track your progress.</p>
   <div class="hero-actions">
    <a href="#levels" class="btn primary">Explore qualifications →</a>
@@ -295,8 +300,8 @@ footer h3{font-size:14px}
    <strong id="statTopics">0</strong>
    <div class="progress"><div id="progressTopics"></div></div>
    <small class="muted">Track completed topics</small>
-  </div>
-  <div class="card">
+  </div> 
+     <div class="card">
    <div class="card-icon">🎯</div>
    <h3>Quiz attempts</h3>
    <strong id="statQuizzes">0</strong>
@@ -577,7 +582,7 @@ footer h3{font-size:14px}
 <footer>
  <div class="footer-inner">
   <div>
-   <div class="logo"><span class="logo-icon">Σ</span>AAT REVISION HUB</div>
+   <div class="logo"><span class="logo-icon" aria-label="AAT logo">A</span>AAT REVISION HUB</div>
    <p>Your learning companion for accounting revision. Study smarter, practise regularly and work towards your goals.</p>
    <p>Independent educational revision resource. Not affiliated with or endorsed by AAT.</p>
   </div>
@@ -595,8 +600,8 @@ footer h3{font-size:14px}
    <a href="mailto:hello@example.com">Contact us</a>
   </div>
  </div>
- <div style="max-width:1250px;margin:30px auto 0;border-top:1px solid #343650;padding-top:18px">
-  <small style="color:#a9abc0">© <span id="year"></span> AAT Revision Hub. All rights reserved. Independent revision resource.</small>
+ <div style="max-width:1250px;margin:30px auto 0;border-top:1px solid #542027;padding-top:18px">
+  <small style="color:#e2bfc2">© <span id="year"></span> AAT Revision Hub. All rights reserved. Independent revision resource.</small>
  </div>
 </footer>
 
