@@ -1573,5 +1573,161 @@ updateDashboard();
 })();
 </script>
 <!-- END PROFESSIONAL STUDENT DASHBOARD -->
+  <!-- AAT REVISION HUB STUDENT ACCOUNTS -->
+<style>
+#aatAccountButton{position:fixed;right:16px;bottom:16px;z-index:9998;background:#c62828;color:white;border:0;border-radius:30px;padding:13px 20px;font-weight:bold;box-shadow:0 3px 12px #0004}
+#aatAccountPanel{display:none;position:fixed;inset:0;z-index:9999;background:#0009;align-items:center;justify-content:center;padding:15px}
+#aatAccountCard{background:white;color:#222;width:100%;max-width:420px;border-radius:16px;padding:22px;max-height:90vh;overflow:auto;font-family:Arial,sans-serif}
+#aatAccountCard h2{margin-top:0;color:#b71c1c}
+#aatAccountCard input{box-sizing:border-box;width:100%;padding:12px;margin:7px 0;border:1px solid #ccc;border-radius:8px;font-size:16px}
+#aatAccountCard button{padding:11px 15px;border:0;border-radius:8px;background:#b71c1c;color:white;font-weight:bold;margin:5px 4px 5px 0}
+#aatAccountCard button.secondary{background:#555}
+#aatAccountMessage{margin-top:12px;white-space:pre-wrap;font-size:14px}
+#aatAccountClose{float:right;background:#555!important}
+</style>
+
+<button id="aatAccountButton">My Account / Login</button>
+<div id="aatAccountPanel">
+  <div id="aatAccountCard">
+    <button id="aatAccountClose" class="secondary" style="float:right">Close</button>
+    <h2>AAT Revision Hub</h2>
+    <p id="aatAccountStatus">Sign in or create your student account.</p>
+    <div id="aatAccountForms">
+      <input id="aatEmail" type="email" placeholder="Email address" autocomplete="email">
+      <input id="aatPassword" type="password" placeholder="Password" autocomplete="current-password">
+      <button id="aatLogin">Log in</button>
+      <button id="aatSignup" class="secondary">Create account</button>
+    </div>
+    <div id="aatAccountMessage"></div>
+    <div id="aatLoggedIn" style="display:none">
+      <p id="aatMembershipDetails"></p>
+      <button id="aatLogout">Log out</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { createClient } from
+  "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+const supabase = createClient(
+  "https://trsvyksdqthflztpdxdh.supabase.co",
+  "sb_publishable_6Wun1amgbRtAEmsvi_cKzQ_6TjKxfC9"
+);
+
+const panel = document.getElementById("aatAccountPanel");
+const message = document.getElementById("aatAccountMessage");
+const forms = document.getElementById("aatAccountForms");
+const loggedIn = document.getElementById("aatLoggedIn");
+const statusText = document.getElementById("aatAccountStatus");
+const membershipDetails = document.getElementById("aatMembershipDetails");
+
+document.getElementById("aatAccountButton").onclick = () => {
+  panel.style.display = "flex";
+  refreshAccount();
+};
+document.getElementById("aatAccountClose").onclick = () => {
+  panel.style.display = "none";
+};
+
+function showMessage(text) {
+  message.textContent = text;
+}
+
+async function refreshAccount() {
+  showMessage("Loading account...");
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (!user) {
+    forms.style.display = "block";
+    loggedIn.style.display = "none";
+    statusText.textContent = "Sign in or create your student account.";
+    showMessage("");
+    return;
+  }
+
+  forms.style.display = "none";
+  loggedIn.style.display = "block";
+  statusText.textContent = "Signed in as " + user.email;
+
+  const { data, error } = await supabase
+    .from("memberships")
+    .select("membership_plan,membership_status,expires_at")
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  if (error) {
+    membershipDetails.textContent =
+      "Your account is active, but membership details could not be loaded.";
+    showMessage(error.message);
+    return;
+  }
+
+  if (!data) {
+    membershipDetails.textContent = "Membership: Free";
+  } else {
+    let plan = data.membership_plan || "free";
+    let state = data.membership_status || "active";
+    let expiry = data.expires_at
+      ? new Date(data.expires_at).toLocaleDateString()
+      : "No expiry date";
+
+    membershipDetails.textContent =
+      "Membership: " + plan.toUpperCase() +
+      "\nStatus: " + state.toUpperCase() +
+      "\nExpiry: " + (plan === "lifetime" ? "Never" : expiry);
+  }
+  showMessage("");
+}
+
+document.getElementById("aatSignup").onclick = async () => {
+  const email = document.getElementById("aatEmail").value.trim();
+  const password = document.getElementById("aatPassword").value;
+
+  if (!email || password.length < 6) {
+    showMessage("Enter your email and a password of at least 6 characters.");
+    return;
+  }
+
+  showMessage("Creating your account...");
+  const { data, error } = await supabase.auth.signUp({ email, password });
+
+  if (error) {
+    showMessage(error.message);
+  } else if (data.session) {
+    showMessage("Account created successfully.");
+    await refreshAccount();
+  } else {
+    showMessage("Account created. Check your email to confirm your address, then log in.");
+  }
+};
+
+document.getElementById("aatLogin").onclick = async () => {
+  const email = document.getElementById("aatEmail").value.trim();
+  const password = document.getElementById("aatPassword").value;
+
+  showMessage("Signing in...");
+  const { error } = await supabase.auth.signInWithPassword({
+    email, password
+  });
+
+  if (error) {
+    showMessage(error.message);
+  } else {
+    await refreshAccount();
+  }
+};
+
+document.getElementById("aatLogout").onclick = async () => {
+  const { error } = await supabase.auth.signOut();
+  if (error) showMessage(error.message);
+  else await refreshAccount();
+};
+
+supabase.auth.onAuthStateChange(() => {
+  if (panel.style.display === "flex") refreshAccount();
+});
+</script>
+<!-- END AAT REVISION HUB STUDENT ACCOUNTS -->
 </body>
 </html>
