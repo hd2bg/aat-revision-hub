@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,7 +118,7 @@ header{
 .card-icon{
  width:44px;height:44px;border-radius:13px;
  background:#fde8e8;color:var(--purple);
- display:grid;place-items:center;font-size:21px;
+ display:grid;place-items:center;font-size:12px;font-weight:850;letter-spacing:.3px;
 }
 .level-card{position:relative;overflow:hidden}
 .level-card:before{
@@ -198,7 +199,7 @@ header{
 .price small{font-size:13px;color:var(--muted)}
 .checklist{padding:0;list-style:none;font-size:13px}
 .checklist li{padding:7px 0}
-.checklist li:before{content:"â";color:var(--green);font-weight:900;margin-right:9px}
+.checklist li:before{content:"";color:var(--green);font-weight:900;margin-right:9px}
 .notice{padding:13px 15px;background:#fff7e6;border:1px solid #f2dfa8;border-radius:10px;color:#74571a;font-size:12px}
 footer{background:var(--navy);color:white;margin-top:60px;padding:45px 5%}
 .footer-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
@@ -240,16 +241,26 @@ footer h3{font-size:14px}
  .footer-inner{grid-template-columns:1fr}
  .hero-stats{grid-template-columns:1fr 1fr}
 }
+
+/* Accessibility and interaction polish */
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+button:disabled{opacity:.55;cursor:not-allowed;transform:none!important}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;text-align:center}
+#aatAccountPanel{overflow-y:auto}
+#aatAccountCard{box-shadow:0 18px 55px rgba(0,0,0,.22)}
+#aatAccountCard input{display:block;min-height:44px}
+@media(max-width:650px){.navright{gap:6px}.navright .btn{padding:9px 11px;font-size:12px}.mobile-toggle{font-size:13px!important;padding:8px 10px!important;border:1px solid var(--border)!important;border-radius:8px!important;color:var(--ink)}.hero-actions .btn{width:100%}.toolbar select,.toolbar input{min-height:44px}}
+
 </style>
 </head>
 
 <body>
-<div class="topbar">YOUR ACCOUNTING REVISION JOURNEY STARTS HERE <span>â¦ Learn. Practise. Succeed.</span></div>
+<div class="topbar">YOUR ACCOUNTING REVISION JOURNEY STARTS HERE <span>Learn. Practise. Succeed.</span></div>
 
 <header>
  <nav class="nav">
   <a href="#home" class="logo">
-   <span class="logo-icon" aria-label="AAT logo">A</span>
+   <span class="logo-icon" aria-label="AAT Revision Hub logo">A</span>
    <span>AAT REVISION HUB<small>YOUR ACCOUNTING STUDY SPACE</small></span>
   </a>
   <div class="navlinks" id="navlinks">
@@ -262,8 +273,8 @@ footer h3{font-size:14px}
   </div>
   <div class="navright">
    <button class="btn outline" onclick="openAATAccount()">My Account</button>
-   <button class="btn primary" onclick="openAATAccount()">Get started</button>
-   <button class="mobile-toggle" onclick="toggleMenu()">â°</button>
+   <a class="btn primary" href="#levels">Get started</a>
+   <button class="mobile-toggle" type="button" aria-label="Open navigation menu" onclick="toggleMenu()">Menu</button>
   </div>
  </nav>
 </header>
@@ -276,7 +287,7 @@ footer h3{font-size:14px}
   <h1>Your AAT journey.<br><span style="color:#ff7777">Your success.</span></h1>
   <p>Everything you need to revise for AAT Levels 2, 3 and 4. Explore clear explanations, practise exam-style questions, master accounting formulas and track your progress.</p>
   <div class="hero-actions">
-   <a href="#levels" class="btn primary">Explore qualifications â</a>
+   <a href="#levels" class="btn primary">Explore qualifications </a>
    <a href="#resources" class="btn outline">Explore resources</a>
   </div>
  </div>
@@ -284,7 +295,7 @@ footer h3{font-size:14px}
   <div class="stat"><strong>03</strong><small>AAT qualification levels</small></div>
   <div class="stat"><strong>24/7</strong><small>Study whenever you like</small></div>
   <div class="stat"><strong>100%</strong><small>Self-paced revision</small></div>
-  <div class="stat"><strong>â</strong><small>Practice opportunities</small></div>
+  <div class="stat"><strong>Unlimited</strong><small>Practice opportunities</small></div>
  </div>
 </section>
 
@@ -295,28 +306,28 @@ footer h3{font-size:14px}
  </div>
  <div class="grid4">
   <div class="card">
-   <div class="card-icon">ð</div>
+   <div class="card-icon">TOP</div>
    <h3>Topics studied</h3>
    <strong id="statTopics">0</strong>
    <div class="progress"><div id="progressTopics"></div></div>
    <small class="muted">Track completed topics</small>
   </div> 
      <div class="card">
-   <div class="card-icon">ð¯</div>
+   <div class="card-icon">QUIZ</div>
    <h3>Quiz attempts</h3>
    <strong id="statQuizzes">0</strong>
    <div class="progress"><div id="progressQuizzes"></div></div>
    <small class="muted">Keep practising</small>
   </div>
   <div class="card">
-   <div class="card-icon">â­</div>
+   <div class="card-icon">BEST</div>
    <h3>Best quiz score</h3>
    <strong id="statBest">0%</strong>
    <div class="progress"><div id="progressBest"></div></div>
    <small class="muted">Your personal best</small>
   </div>
   <div class="card">
-   <div class="card-icon">ð¥</div>
+   <div class="card-icon">TASK</div>
    <h3>Study goal</h3>
    <strong id="statTasks">0</strong>
    <div class="progress"><div id="progressTasks"></div></div>
@@ -336,7 +347,7 @@ footer h3{font-size:14px}
    <p>Certificate in Accounting. Build your knowledge of bookkeeping, costing and business.</p>
    <span class="tag free">Beginner friendly</span>
    <div class="progress"><div id="level2progress"></div></div>
-   <button class="btn primary" onclick="selectLevel(2)">Explore Level 2 â</button>
+   <button class="btn primary" onclick="selectLevel(2)">Explore Level 2 </button>
   </div>
   <div class="card level-card">
    <div class="level-number">ADVANCED</div>
@@ -344,7 +355,7 @@ footer h3{font-size:14px}
    <p>Diploma in Accounting. Develop advanced bookkeeping, financial accounting and management accounting skills.</p>
    <span class="tag free">Intermediate</span>
    <div class="progress"><div id="level3progress"></div></div>
-   <button class="btn primary" onclick="selectLevel(3)">Explore Level 3 â</button>
+   <button class="btn primary" onclick="selectLevel(3)">Explore Level 3 </button>
   </div>
   <div class="card level-card">
    <div class="level-number">PROFESSIONAL</div>
@@ -352,7 +363,7 @@ footer h3{font-size:14px}
    <p>Diploma for Professional Accounting Technicians. Develop higher-level accounting and business expertise.</p>
    <span class="tag pro">Advanced</span>
    <div class="progress"><div id="level4progress"></div></div>
-   <button class="btn primary" onclick="selectLevel(4)">Explore Level 4 â</button>
+   <button class="btn primary" onclick="selectLevel(4)">Explore Level 4 </button>
   </div>
  </div>
  <div class="notice" style="margin-top:15px">
@@ -382,7 +393,7 @@ footer h3{font-size:14px}
  </div>
  <div class="toolbar">
   <div class="searchbox" style="flex:1">
-   <span>â</span><input id="resourceSearch" placeholder="Search revision resources..." oninput="renderResources()">
+   <span>Search</span><input id="resourceSearch" placeholder="Search revision resources..." oninput="renderResources()">
   </div>
   <select id="resourceLevel" onchange="renderResources()">
    <option value="all">All levels</option>
@@ -400,25 +411,25 @@ footer h3{font-size:14px}
  </div>
  <div class="grid4">
   <div class="card feature">
-   <div class="card-icon">ð§ </div>
+   <div class="card-icon">MEM</div>
    <h3>Flashcards</h3>
    <p>Memorise important accounting terms and concepts.</p>
    <button class="btn secondary" onclick="openFlashcards()">Start flashcards</button>
   </div>
   <div class="card feature">
-   <div class="card-icon">ð</div>
+   <div class="card-icon">TEST</div>
    <h3>Practice quizzes</h3>
    <p>Test your knowledge with instant feedback.</p>
    <button class="btn secondary" onclick="startQuiz()">Start a quiz</button>
   </div>
   <div class="card feature">
-   <div class="card-icon">â±ï¸</div>
+   <div class="card-icon">TIME</div>
    <h3>Timed practice</h3>
    <p>Practise under timed conditions.</p>
    <button class="btn secondary" onclick="startQuiz(true)">Timed test</button>
   </div>
   <div class="card feature">
-   <div class="card-icon">ð</div>
+   <div class="card-icon">NOTES</div>
    <h3>Study notes</h3>
    <p>Read clear explanations and examples.</p>
    <button class="btn secondary" onclick="openNotes('double-entry')">Read notes</button>
@@ -444,9 +455,9 @@ footer h3{font-size:14px}
   <div class="panel">
    <h3>Gross profit calculator</h3>
    <p class="small muted">Calculate gross profit and margin.</p>
-   <label class="small">Sales revenue (Â£)</label>
+   <label class="small">Sales revenue (£)</label>
    <input class="field" id="sales" type="number" placeholder="10000" style="width:100%">
-   <label class="small">Cost of sales (Â£)</label>
+   <label class="small">Cost of sales (£)</label>
    <input class="field" id="cost" type="number" placeholder="6000" style="width:100%">
    <button class="btn primary" style="margin-top:12px" onclick="calcProfit()">Calculate</button>
    <div class="calc-result hidden" id="profitResult"></div>
@@ -454,9 +465,9 @@ footer h3{font-size:14px}
   <div class="panel">
    <h3>Depreciation calculator</h3>
    <p class="small muted">Straight-line depreciation.</p>
-   <label class="small">Asset cost (Â£)</label>
+   <label class="small">Asset cost (£)</label>
    <input class="field" id="assetCost" type="number" placeholder="10000" style="width:100%">
-   <label class="small">Residual value (Â£)</label>
+   <label class="small">Residual value (£)</label>
    <input class="field" id="residual" type="number" placeholder="1000" style="width:100%">
    <label class="small">Useful life (years)</label>
    <input class="field" id="life" type="number" placeholder="5" style="width:100%">
@@ -476,9 +487,9 @@ footer h3{font-size:14px}
   <div class="panel">
    <h3>Markup and margin</h3>
    <p class="small muted">Work out selling price, markup and profit margin.</p>
-   <label class="small">Cost (Â£)</label>
+   <label class="small">Cost (£)</label>
    <input class="field" id="mmCost" type="number" placeholder="60" style="width:100%">
-   <label class="small">Selling price (Â£)</label>
+   <label class="small">Selling price (£)</label>
    <input class="field" id="mmSelling" type="number" placeholder="100" style="width:100%">
    <button class="btn primary" style="margin-top:12px" onclick="calcMarkup()">Calculate</button>
    <div class="calc-result hidden" id="mmResult"></div>
@@ -486,9 +497,9 @@ footer h3{font-size:14px}
   <div class="panel">
    <h3>Current ratio</h3>
    <p class="small muted">Assess short-term liquidity.</p>
-   <label class="small">Current assets (Â£)</label>
+   <label class="small">Current assets (£)</label>
    <input class="field" id="currentAssets" type="number" placeholder="20000" style="width:100%">
-   <label class="small">Current liabilities (Â£)</label>
+   <label class="small">Current liabilities (£)</label>
    <input class="field" id="currentLiabilities" type="number" placeholder="10000" style="width:100%">
    <button class="btn primary" style="margin-top:12px" onclick="calcRatio()">Calculate</button>
    <div class="calc-result hidden" id="ratioResult"></div>
@@ -501,14 +512,14 @@ footer h3{font-size:14px}
   <div><h2>Essential accounting formulas</h2><p>Quick reference for common accounting calculations.</p></div>
  </div>
  <div class="grid">
-  <div class="card"><h3>Gross profit</h3><div class="formula">Sales â Cost of sales</div><p>The profit made before operating expenses.</p></div>
-  <div class="card"><h3>Net profit</h3><div class="formula">Gross profit â Expenses</div><p>Profit remaining after expenses.</p></div>
+  <div class="card"><h3>Gross profit</h3><div class="formula">Sales - Cost of sales</div><p>The profit made before operating expenses.</p></div>
+  <div class="card"><h3>Net profit</h3><div class="formula">Gross profit - Expenses</div><p>Profit remaining after expenses.</p></div>
   <div class="card"><h3>Accounting equation</h3><div class="formula">Assets = Capital + Liabilities</div><p>The foundation of double-entry bookkeeping.</p></div>
-  <div class="card"><h3>Gross profit margin</h3><div class="formula">(Gross profit Ã· Revenue) Ã 100</div><p>Gross profit as a percentage of sales.</p></div>
-  <div class="card"><h3>Current ratio</h3><div class="formula">Current assets Ã· Current liabilities</div><p>Measures short-term liquidity.</p></div>
-  <div class="card"><h3>Straight-line depreciation</h3><div class="formula">(Cost â Residual value) Ã· Useful life</div><p>Annual depreciation expense.</p></div>
-  <div class="card"><h3>Markup percentage</h3><div class="formula">(Profit Ã· Cost) Ã 100</div><p>Profit measured against cost.</p></div>
-  <div class="card"><h3>Net profit margin</h3><div class="formula">(Net profit Ã· Revenue) Ã 100</div><p>Net profit as a percentage of sales.</p></div>
+  <div class="card"><h3>Gross profit margin</h3><div class="formula">(Gross profit / Revenue) x 100</div><p>Gross profit as a percentage of sales.</p></div>
+  <div class="card"><h3>Current ratio</h3><div class="formula">Current assets / Current liabilities</div><p>Measures short-term liquidity.</p></div>
+  <div class="card"><h3>Straight-line depreciation</h3><div class="formula">(Cost - Residual value) / Useful life</div><p>Annual depreciation expense.</p></div>
+  <div class="card"><h3>Markup percentage</h3><div class="formula">(Profit / Cost) x 100</div><p>Profit measured against cost.</p></div>
+  <div class="card"><h3>Net profit margin</h3><div class="formula">(Net profit / Revenue) x 100</div><p>Net profit as a percentage of sales.</p></div>
  </div>
 </section>
 
@@ -535,7 +546,7 @@ footer h3{font-size:14px}
   <div class="card">
    <span class="tag free">FREE FOREVER</span>
    <h3>Free membership</h3>
-   <div class="price">Â£0 <small>/ forever</small></div>
+   <div class="price">£0 <small>/ forever</small></div>
    <ul class="checklist">
     <li>Selected revision notes</li>
     <li>Basic quizzes</li>
@@ -549,26 +560,26 @@ footer h3{font-size:14px}
   <div class="card pricing">
    <span class="tag pro">MONTHLY PREMIUM</span>
    <h3>Premium membership</h3>
-   <div class="price">Â£4.99 <small>/ month</small></div>
+   <div class="price">£4.99 <small>/ month</small></div>
    <ul class="checklist">
     <li>Premium revision resources as they are published</li>
     <li>Additional practice question banks</li>
     <li>Advanced mock exams and study materials</li>
     <li>Access while your membership is active</li>
    </ul>
-   <a class="btn primary" href="https://wise.com/pay/r/qDGOXHNcwmUkEk8" target="_blank" rel="noopener">Pay Â£4.99 monthly â</a>
+   <a class="btn primary" href="https://wise.com/pay/r/qDGOXHNcwmUkEk8" target="_blank" rel="noopener">Pay £4.99 monthly </a>
   </div>
   <div class="card">
    <span class="tag pro">ONE-TIME PAYMENT</span>
    <h3>Lifetime Premium</h3>
-   <div class="price">Â£49.99 <small>/ once</small></div>
+   <div class="price">£49.99 <small>/ once</small></div>
    <ul class="checklist">
     <li>Lifetime Premium membership</li>
     <li>Premium revision resources as they are published</li>
     <li>Additional practice question banks</li>
     <li>No monthly renewal</li>
    </ul>
-   <a class="btn primary" href="https://wise.com/pay/r/wHl0HKrzIL3T77E" target="_blank" rel="noopener">Pay Â£49.99 once â</a>
+   <a class="btn primary" href="https://wise.com/pay/r/wHl0HKrzIL3T77E" target="_blank" rel="noopener">Pay £49.99 once </a>
   </div>
  </div>
  <div class="notice" style="margin-top:18px">
@@ -581,9 +592,9 @@ footer h3{font-size:14px}
   <h2>Official AAT resources</h2>
   <p class="muted small">Use the official AAT website to verify qualification specifications, assessment requirements and current learning materials.</p>
   <div class="grid">
-   <div><h3>ð Qualifications</h3><a class="btn secondary" href="https://www.aat.org.uk/qualifications-and-courses/accounting" target="_blank" rel="noopener">AAT qualifications â</a></div>
-   <div><h3>ð Specifications</h3><a class="btn secondary" href="https://www.aat.org.uk/deliver/qualifications/specifications-outlines" target="_blank" rel="noopener">Qualification specifications â</a></div>
-   <div><h3>ð Assessments</h3><a class="btn secondary" href="https://www.aat.org.uk/assessments" target="_blank" rel="noopener">Assessment information â</a></div>
+   <div><h3> Qualifications</h3><a class="btn secondary" href="https://www.aat.org.uk/qualifications-and-courses/accounting" target="_blank" rel="noopener">AAT qualifications </a></div>
+   <div><h3> Specifications</h3><a class="btn secondary" href="https://www.aat.org.uk/deliver/qualifications/specifications-outlines" target="_blank" rel="noopener">Qualification specifications </a></div>
+   <div><h3>TEST Assessments</h3><a class="btn secondary" href="https://www.aat.org.uk/assessments" target="_blank" rel="noopener">Assessment information </a></div>
   </div>
  </div>
 </section>
@@ -608,11 +619,11 @@ footer h3{font-size:14px}
    <h3>Information</h3>
    <a href="#pricing">Membership</a>
    <a href="https://www.aat.org.uk/" target="_blank" rel="noopener">Official AAT website</a>
-   <a href="mailto:hello@example.com">Contact us</a>
+   <a href="#pricing">Membership information</a>
   </div>
  </div>
  <div style="max-width:1250px;margin:30px auto 0;border-top:1px solid #542027;padding-top:18px">
-  <small style="color:#e2bfc2">Â© <span id="year"></span> AAT Revision Hub. All rights reserved. Independent revision resource.</small>
+  <small style="color:#e2bfc2">© <span id="year"></span> AAT Revision Hub. All rights reserved. Independent revision resource.</small>
  </div>
 </footer>
 
@@ -620,29 +631,29 @@ footer h3{font-size:14px}
 
 <div class="modal" id="accountModal">
  <div class="modal-box">
-  <div class="modal-head"><h2>Welcome to AAT Revision Hub</h2><button class="close" onclick="closeModal('accountModal')">â</button></div>
+  <div class="modal-head"><h2>Welcome to AAT Revision Hub</h2><button class="close" type="button" onclick="closeModal('accountModal')">Close</button></div>
   <p class="muted">Enter a display name to personalise your study space.</p>
   <input class="field" id="studentName" placeholder="Your name" style="width:100%">
   <button class="btn primary" style="margin-top:12px" onclick="saveName()">Save name</button>
-  <p class="small muted">This is a local browser profile, not a secure online account. Do not enter passwords or sensitive information.</p>
+  <p class="small muted">Your display name is saved only in this browser. Use My Account for your online student account.</p>
  </div>
 </div>
 
 <div class="modal" id="contentModal">
  <div class="modal-box">
-  <div class="modal-head"><h2 id="contentTitle">Study resource</h2><button class="close" onclick="closeModal('contentModal')">â</button></div>
+  <div class="modal-head"><h2 id="contentTitle">Study resource</h2><button class="close" type="button" onclick="closeModal('contentModal')">Close</button></div>
   <div id="contentBody"></div>
  </div>
 </div>
 
 <div class="modal" id="flashModal">
  <div class="modal-box">
-  <div class="modal-head"><h2>Revision flashcards</h2><button class="close" onclick="closeModal('flashModal')">â</button></div>
+  <div class="modal-head"><h2>Revision flashcards</h2><button class="close" type="button" onclick="closeModal('flashModal')">Close</button></div>
   <p class="small muted" id="flashCount"></p>
   <div class="flashcard" id="flashCard" onclick="flipCard()">Loading...</div>
   <div style="display:flex;justify-content:space-between;gap:10px;margin-top:18px">
-   <button class="btn outline" onclick="previousCard()">â Previous</button>
-   <button class="btn primary" onclick="nextCard()">Next â</button>
+   <button class="btn outline" onclick="previousCard()"> Previous</button>
+   <button class="btn primary" onclick="nextCard()">Next </button>
   </div>
   <button class="btn secondary" style="width:100%;margin-top:10px" onclick="flipCard()">Flip card</button>
  </div>
@@ -650,7 +661,7 @@ footer h3{font-size:14px}
 
 <div class="modal" id="quizModal">
  <div class="modal-box">
-  <div class="modal-head"><h2>Knowledge check</h2><button class="close" onclick="closeModal('quizModal')">â</button></div>
+  <div class="modal-head"><h2>Knowledge check</h2><button class="close" type="button" onclick="closeModal('quizModal')">Close</button></div>
   <div id="quizArea"></div>
  </div>
 </div>
@@ -706,11 +717,11 @@ const notes = {
   </ul>
   <h3>Debit and credit rules</h3>
   <p>Assets and expenses normally increase with a debit. Liabilities, capital and income normally increase with a credit.</p>
-  <div class="formula">Assets + Expenses increase â Debit<br>Liabilities + Capital + Income increase â Credit</div>
+  <div class="formula">Assets + Expenses increase  Debit<br>Liabilities + Capital + Income increase  Credit</div>
   <h3>Worked example</h3>
-  <p>A business purchases equipment for Â£500 using its bank account.</p>
-  <p>Debit: Equipment Â£500</p>
-  <p>Credit: Bank Â£500</p>
+  <p>A business purchases equipment for £500 using its bank account.</p>
+  <p>Debit: Equipment £500</p>
+  <p>Credit: Bank £500</p>
   <p>The equipment asset increases and the bank asset decreases. Both entries are equal.</p>
   <h3>Remember</h3>
   <p>Always identify the accounts affected before deciding which side to debit or credit.</p>
@@ -733,7 +744,7 @@ const notes = {
   <h3>Important limitation</h3>
   <p>A balanced trial balance does not prove that every transaction has been recorded correctly. Errors of omission, principle and original entry may remain undetected.</p>
   <h3>Example</h3>
-  <p>Bank Â£2,000 debit, sales Â£3,000 credit and expenses Â£1,000 debit. The total debit and credit entries are Â£3,000 each.</p>
+  <p>Bank £2,000 debit, sales £3,000 credit and expenses £1,000 debit. The total debit and credit entries are £3,000 each.</p>
   </div>`
  },
  "vat":{
@@ -749,9 +760,9 @@ const notes = {
    <li><b>Input VAT:</b> VAT paid on purchases.</li>
    <li><b>VAT control account:</b> Records VAT-related amounts.</li>
   </ul>
-  <div class="formula">VAT payable = Output VAT â Recoverable input VAT</div>
+  <div class="formula">VAT payable = Output VAT - Recoverable input VAT</div>
   <h3>Example using a 20% rate</h3>
-  <p>Net sale: Â£100. VAT: Â£20. Gross sale: Â£120.</p>
+  <p>Net sale: £100. VAT: £20. Gross sale: £120.</p>
   <p>VAT rates and recovery rules depend on the transaction and applicable legislation. Always verify current UK tax rules.</p>
   </div>`
  },
@@ -771,7 +782,7 @@ const notes = {
   <p>Fixed costs generally remain constant in total within a relevant range. Variable costs change in total with activity.</p>
   <div class="formula">Prime cost = Direct materials + Direct labour + Direct expenses</div>
   <h3>Example</h3>
-  <p>Materials Â£200, labour Â£100 and direct expenses Â£50. Prime cost = Â£350.</p>
+  <p>Materials £200, labour £100 and direct expenses £50. Prime cost = £350.</p>
   </div>`
  },
  "accruals":{
@@ -783,10 +794,10 @@ const notes = {
   <p>An accrual is an expense incurred in the accounting period but not yet paid or recorded in the normal payment records.</p>
   <h3>Prepayments</h3>
   <p>A prepayment is an amount paid in advance for a future accounting period. The portion relating to the future period is treated as an asset.</p>
-  <div class="formula">Expense for the period = Amount paid + Closing accrual â Closing prepayment</div>
+  <div class="formula">Expense for the period = Amount paid + Closing accrual - Closing prepayment</div>
   <h3>Example</h3>
-  <p>Rent paid is Â£12,000. Closing accrual is Â£500 and closing prepayment is Â£1,000.</p>
-  <p>Expense = Â£12,000 + Â£500 â Â£1,000 = Â£11,500.</p>
+  <p>Rent paid is £12,000. Closing accrual is £500 and closing prepayment is £1,000.</p>
+  <p>Expense = £12,000 + £500 - £1,000 = £11,500.</p>
   </div>`
  },
  "depreciation":{
@@ -797,12 +808,12 @@ const notes = {
   <h3>What is depreciation?</h3>
   <p>Depreciation allocates the depreciable amount of a tangible non-current asset over its useful life.</p>
   <h3>Straight-line method</h3>
-  <div class="formula">(Cost â Residual value) Ã· Useful life</div>
+  <div class="formula">(Cost - Residual value) / Useful life</div>
   <h3>Reducing balance method</h3>
   <p>Depreciation is calculated as a percentage of the asset's carrying amount at the start of the period.</p>
   <h3>Example</h3>
-  <p>Cost Â£10,000, residual value Â£1,000, useful life 5 years.</p>
-  <p>Annual straight-line depreciation = Â£1,800.</p>
+  <p>Cost £10,000, residual value £1,000, useful life 5 years.</p>
+  <p>Annual straight-line depreciation = £1,800.</p>
   <h3>Remember</h3>
   <p>Depreciation is an expense, but it is not itself a cash payment.</p>
   </div>`
@@ -816,7 +827,7 @@ const notes = {
   <p>A budget is a financial plan for a future period. It helps organisations plan, coordinate and control operations.</p>
   <h3>Variance analysis</h3>
   <p>A variance is the difference between a budgeted figure and an actual figure.</p>
-  <div class="formula">Variance = Actual result â Budgeted result</div>
+  <div class="formula">Variance = Actual result - Budgeted result</div>
   <p>For revenue, actual revenue above budget is normally favourable. For costs, actual costs below budget are normally favourable.</p>
   <h3>Investigating variances</h3>
   <ul>
@@ -834,7 +845,7 @@ const notes = {
   <div class="note-content">
   <h3>Statement of profit or loss</h3>
   <p>Reports income and expenses for an accounting period to determine profit or loss.</p>
-  <div class="formula">Profit = Income â Expenses</div>
+  <div class="formula">Profit = Income - Expenses</div>
   <h3>Statement of financial position</h3>
   <p>Shows assets, liabilities and equity at a particular date.</p>
   <div class="formula">Assets = Equity + Liabilities</div>
@@ -937,20 +948,20 @@ const flashcards = [
 
 const questions = [
  {level:2,q:"Which side of an account records an increase in an asset?",a:["Credit","Debit","Both sides","Neither side"],correct:1,why:"Assets normally increase on the debit side."},
- {level:2,q:"What is the accounting equation?",a:["Assets = Liabilities â Capital","Assets = Capital + Liabilities","Profit = Assets + Expenses","Sales = Purchases + VAT"],correct:1,why:"Assets equal equity (capital) plus liabilities."},
+ {level:2,q:"What is the accounting equation?",a:["Assets = Liabilities - Capital","Assets = Capital + Liabilities","Profit = Assets + Expenses","Sales = Purchases + VAT"],correct:1,why:"Assets equal equity (capital) plus liabilities."},
  {level:2,q:"A business purchases equipment using its bank account. Which accounts are affected?",a:["Equipment and bank","Sales and purchases","Capital and sales","VAT and wages"],correct:0,why:"Equipment increases and bank decreases."},
  {level:2,q:"What is a trial balance primarily used for?",a:["Calculating VAT","Checking debit and credit totals","Calculating depreciation","Preparing invoices"],correct:1,why:"A trial balance lists ledger balances and checks their arithmetic equality."},
  {level:2,q:"Which is a direct cost of manufacturing a product?",a:["Factory rent","Direct materials","Office electricity","Head office salaries"],correct:1,why:"Direct materials can be traced directly to the product."},
- {level:2,q:"A net purchase is Â£100 with VAT at 20%. What is the gross amount?",a:["Â£100","Â£110","Â£120","Â£125"],correct:2,why:"VAT is Â£20, giving a gross amount of Â£120."},
+ {level:2,q:"A net purchase is £100 with VAT at 20%. What is the gross amount?",a:["£100","£110","£120","£125"],correct:2,why:"VAT is £20, giving a gross amount of £120."},
  {level:2,q:"What is a sales invoice used for?",a:["Recording a customer sale","Recording depreciation","Recording a bank loan","Recording wages"],correct:0,why:"A sales invoice documents goods or services supplied to a customer."},
  {level:2,q:"Which account normally has a credit balance?",a:["Rent expense","Bank asset","Sales revenue","Motor expenses"],correct:2,why:"Income accounts normally have credit balances."},
  {level:3,q:"What does depreciation allocate?",a:["Cash payments","The depreciable amount over useful life","The purchase price to sales","VAT over time"],correct:1,why:"Depreciation allocates the depreciable amount over an asset's useful life."},
- {level:3,q:"An asset costs Â£10,000, has residual value Â£1,000 and a five-year life. What is annual straight-line depreciation?",a:["Â£1,000","Â£1,800","Â£2,000","Â£2,200"],correct:1,why:"(Â£10,000 â Â£1,000) Ã· 5 = Â£1,800."},
+ {level:3,q:"An asset costs £10,000, has residual value £1,000 and a five-year life. What is annual straight-line depreciation?",a:["£1,000","£1,800","£2,000","£2,200"],correct:1,why:"(£10,000 - £1,000) / 5 = £1,800."},
  {level:3,q:"What is an accrual?",a:["Cash received in advance","Expense incurred but not yet paid","An asset purchased","A capital contribution"],correct:1,why:"An accrual recognises an expense in the period it relates to."},
  {level:3,q:"What is a favourable cost variance generally?",a:["Actual cost is above budget","Actual cost is below budget","Budget equals actual","Revenue is below budget"],correct:1,why:"Spending less than budget for the same activity is generally favourable."},
  {level:3,q:"What is the purpose of a budget?",a:["To plan and control financial activity","To remove all business risks","To calculate historical VAT only","To replace financial statements"],correct:0,why:"Budgets help with planning, coordination and control."},
  {level:3,q:"Which is an example of a professional ethical principle?",a:["Personal gain","Confidentiality","Favouritism","Ignoring regulations"],correct:1,why:"Confidentiality is a fundamental professional ethical principle."},
- {level:3,q:"A business has revenue of Â£20,000 and cost of sales of Â£12,000. What is gross profit?",a:["Â£8,000","Â£12,000","Â£20,000","Â£32,000"],correct:0,why:"Â£20,000 â Â£12,000 = Â£8,000."},
+ {level:3,q:"A business has revenue of £20,000 and cost of sales of £12,000. What is gross profit?",a:["£8,000","£12,000","£20,000","£32,000"],correct:0,why:"£20,000 - £12,000 = £8,000."},
  {level:4,q:"What does a statement of financial position show?",a:["Profit over a year","Assets, liabilities and equity at a date","Cash receipts only","Sales forecasts"],correct:1,why:"It presents the entity's financial position at a specific date."},
  {level:4,q:"Which three categories are used in a statement of cash flows?",a:["Assets, liabilities, capital","Operating, investing, financing","Sales, purchases, expenses","Profit, tax, dividends"],correct:1,why:"Cash flows are classified into operating, investing and financing activities."},
  {level:4,q:"What is segregation of duties designed to help prevent?",a:["All business expenses","Errors and fraud","All accounting estimates","Depreciation"],correct:1,why:"Separating duties helps reduce the opportunity for errors and fraud."},
@@ -1015,24 +1026,24 @@ function renderUnits(){
  document.getElementById("unitDescription").textContent="Select a unit to explore its topics and learning resources.";
  document.getElementById("unitList").innerHTML=list.map(u=>`
  <div class="unit">
-  <div><strong>${u.name}</strong><small>${u.code} Â· Level ${level}</small><div class="small muted">${u.desc}</div></div>
-  <button class="btn secondary" onclick="showUnit('${u.code}',${level})">Explore â</button>
+  <div><strong>${u.name}</strong><small>${u.code}  |  Level ${level}</small><div class="small muted">${u.desc}</div></div>
+  <button class="btn secondary" onclick="showUnit('${u.code}',${level})">Explore </button>
  </div>`).join("")||'<div class="empty">No units found.</div>';
 }
 
 const resources=[
- {title:"Double-entry bookkeeping",desc:"Understand debits, credits and ledger entries.",icon:"ð",level:2,note:"double-entry",type:"Notes",premium:false},
- {title:"Trial balances",desc:"Learn how to prepare and understand trial balances.",icon:"âï¸",level:2,note:"trial-balance",type:"Notes",premium:false},
- {title:"VAT fundamentals",desc:"Understand input VAT, output VAT and VAT calculations.",icon:"ð§¾",level:2,note:"vat",type:"Notes",premium:false},
- {title:"Introduction to costing",desc:"Explore direct, indirect, fixed and variable costs.",icon:"ð",level:2,note:"costing",type:"Notes",premium:false},
- {title:"Accruals and prepayments",desc:"Understand period-end adjustments.",icon:"ð",level:3,note:"accruals",type:"Notes",premium:false},
- {title:"Depreciation",desc:"Study straight-line and reducing balance methods.",icon:"ð",level:3,note:"depreciation",type:"Notes",premium:false},
- {title:"Budgets and variances",desc:"Explore budget preparation and variance analysis.",icon:"ð",level:3,note:"budgets",type:"Notes",premium:false},
- {title:"Professional ethics",desc:"Learn ethical principles and threats.",icon:"ð¤",level:3,note:"ethics",type:"Notes",premium:false},
- {title:"Financial statements",desc:"Understand company financial reporting.",icon:"ð",level:4,note:"financial-statements",type:"Notes",premium:false},
- {title:"Audit and internal controls",desc:"Explore risk, controls and audit evidence.",icon:"ð",level:4,note:"audit",type:"Notes",premium:false},
- {title:"Principles of taxation",desc:"Explore the main UK taxation areas.",icon:"ðï¸",level:4,note:"tax",type:"Notes",premium:false},
- {title:"Advanced practice question bank",desc:"Additional topic-based questions and explanations.",icon:"ð",level:4,note:"audit",type:"Premium preview",premium:true}
+ {title:"Double-entry bookkeeping",desc:"Understand debits, credits and ledger entries.",icon:"DB",level:2,note:"double-entry",type:"Notes",premium:false},
+ {title:"Trial balances",desc:"Learn how to prepare and understand trial balances.",icon:"TB",level:2,note:"trial-balance",type:"Notes",premium:false},
+ {title:"VAT fundamentals",desc:"Understand input VAT, output VAT and VAT calculations.",icon:"VAT",level:2,note:"vat",type:"Notes",premium:false},
+ {title:"Introduction to costing",desc:"Explore direct, indirect, fixed and variable costs.",icon:"COST",level:2,note:"costing",type:"Notes",premium:false},
+ {title:"Accruals and prepayments",desc:"Understand period-end adjustments.",icon:"ACC",level:3,note:"accruals",type:"Notes",premium:false},
+ {title:"Depreciation",desc:"Study straight-line and reducing balance methods.",icon:"DEP",level:3,note:"depreciation",type:"Notes",premium:false},
+ {title:"Budgets and variances",desc:"Explore budget preparation and variance analysis.",icon:"BUD",level:3,note:"budgets",type:"Notes",premium:false},
+ {title:"Professional ethics",desc:"Learn ethical principles and threats.",icon:"ETH",level:3,note:"ethics",type:"Notes",premium:false},
+ {title:"Financial statements",desc:"Understand company financial reporting.",icon:"FS",level:4,note:"financial-statements",type:"Notes",premium:false},
+ {title:"Audit and internal controls",desc:"Explore risk, controls and audit evidence.",icon:"AUD",level:4,note:"audit",type:"Notes",premium:false},
+ {title:"Principles of taxation",desc:"Explore the main UK taxation areas.",icon:"TAX",level:4,note:"tax",type:"Notes",premium:false},
+ {title:"Advanced practice question bank",desc:"Additional topic-based questions and explanations.",icon:"PRO",level:4,note:"audit",type:"Premium preview",premium:true}
 ];
 
 function renderResources(){
@@ -1047,7 +1058,7 @@ function renderResources(){
   <div class="card-icon">${r.icon}</div>
   <div style="margin-top:12px"><span class="tag">LEVEL ${r.level}</span> <span class="tag ${r.premium?'pro':'free'}">${r.premium?'PREMIUM PREVIEW':'FREE'}</span></div>
   <h3>${r.title}</h3><p>${r.desc}</p>
-  <button class="btn secondary" onclick="${r.premium ? "openPremiumResource()" : "openNotes('" + r.note + "')"}">${r.premium ? "Unlock premium â" : "Open resource â"}</button>
+  <button class="btn secondary" onclick="${r.premium ? "openPremiumResource()" : "openNotes('" + r.note + "')"}">${r.premium ? "Unlock premium " : "Open resource "}</button>
  </div>`).join("")||'<div class="empty">No matching resources.</div>';
 }
 function showUnit(code,level){
@@ -1064,7 +1075,7 @@ function showUnit(code,level){
  <li>Complete practice questions.</li>
  <li>Review mistakes and revise weaker areas.</li>
  </ul>
- <button class="btn primary" onclick="markComplete('${code}');closeModal('contentModal')">Mark unit as revised â</button>
+ <button class="btn primary" onclick="markComplete('${code}');closeModal('contentModal')">Mark unit as revised </button>
  <p class="small muted">This is a revision checklist, not an official unit specification.</p>`;
  showModal("contentModal");
 }
@@ -1073,7 +1084,7 @@ function openNotes(key){
  if(!note)return showToast("Resource not available yet.");
  document.getElementById("contentTitle").textContent=note.title;
  document.getElementById("contentBody").innerHTML=note.html+
- `<button class="btn primary" style="margin-top:15px" onclick="markComplete('${key}');closeModal('contentModal')">Mark as revised â</button>`;
+ `<button class="btn primary" style="margin-top:15px" onclick="markComplete('${key}');closeModal('contentModal')">Mark as revised </button>`;
  showModal("contentModal");
 }
 function openPremiumResource(){
@@ -1097,8 +1108,8 @@ function renderFlash(){
  const f=flashcards[currentFlash];
  document.getElementById("flashCount").textContent=`Card ${currentFlash+1} of ${flashcards.length}`;
  document.getElementById("flashCard").innerHTML=flipped?
- `<div>${f[1]}<small>ANSWER Â· CLICK TO FLIP BACK</small></div>`:
- `<div>${f[0]}<small>QUESTION Â· CLICK TO REVEAL ANSWER</small></div>`;
+ `<div>${f[1]}<small>ANSWER  |  CLICK TO FLIP BACK</small></div>`:
+ `<div>${f[0]}<small>QUESTION  |  CLICK TO REVEAL ANSWER</small></div>`;
 }
 function flipCard(){flipped=!flipped;renderFlash()}
 function nextCard(){currentFlash=(currentFlash+1)%flashcards.length;flipped=false;renderFlash()}
@@ -1141,7 +1152,7 @@ function renderQuestion(){
  ${q.a.map((a,i)=>`<button class="quiz-option" onclick="answerQuestion(${i})">${String.fromCharCode(65+i)}. ${a}</button>`).join("")}
  </div>
  <div id="feedback"></div>
- <button class="btn primary hidden" id="nextQuestion" style="margin-top:15px" onclick="nextQuestion()">Next question â</button>`;
+ <button class="btn primary hidden" id="nextQuestion" style="margin-top:15px" onclick="nextQuestion()">Next question </button>`;
 }
 function answerQuestion(choice){
  if(answered)return;
@@ -1155,7 +1166,7 @@ function answerQuestion(choice){
  });
  if(choice===q.correct)quizScore++;
  document.getElementById("feedback").innerHTML=`
- <div class="answer-box"><b>${choice===q.correct?"Correct! â":"Not quite."}</b><p>${q.why}</p></div>`;
+ <div class="answer-box"><b>${choice===q.correct?"Correct! ":"Not quite."}</b><p>${q.why}</p></div>`;
  document.getElementById("nextQuestion").classList.remove("hidden");
 }
 function nextQuestion(){quizIndex++;renderQuestion()}
@@ -1167,7 +1178,7 @@ function finishQuiz(){
  saveData("quizHistory",quizHistory);
  document.getElementById("quizArea").innerHTML=`
  <div style="text-align:center;padding:25px 0">
- <div style="font-size:50px">ð</div>
+ <div style="font-size:50px">RESULT</div>
  <h2>Quiz complete!</h2>
  <div style="font-size:48px;font-weight:900;color:var(--purple)">${percent}%</div>
  <p>You scored ${quizScore} out of ${total}.</p>
@@ -1186,7 +1197,7 @@ function num(id){return Number(document.getElementById(id).value)}
 function output(id,html){
  const e=document.getElementById(id);e.innerHTML=html;e.classList.remove("hidden");
 }
-function money(n){return "Â£"+n.toLocaleString("en-GB",{minimumFractionDigits:2,maximumFractionDigits:2})}
+function money(n){return "£"+n.toLocaleString("en-GB",{minimumFractionDigits:2,maximumFractionDigits:2})}
 function calcVAT(){
  const net=num("vatNet"),rate=num("vatRate");
  if(net<0||rate<0||!Number.isFinite(net+rate))return showToast("Enter valid positive values.");
@@ -1323,7 +1334,7 @@ updateDashboard();
   background:#fff7f7;border:1px solid #f5dada;
   border-radius:16px;padding:19px;
 }
-#aatProDashboard .dash-icon{font-size:24px}
+#aatProDashboard .dash-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#fde8e8;color:#a71922;font-size:11px;font-weight:850;letter-spacing:.3px}
 #aatProDashboard .dash-number{
   display:block;font-size:30px;font-weight:900;
   color:#a71922;margin-top:8px;
@@ -1392,22 +1403,22 @@ updateDashboard();
 
   <div class="dash-grid">
     <div class="dash-card">
-      <div class="dash-icon">ð</div>
+      <div class="dash-icon">TOP</div>
       <span class="dash-number" id="aatDashTopics">0</span>
       <small>Topics completed</small>
     </div>
     <div class="dash-card">
-      <div class="dash-icon">ð¯</div>
+      <div class="dash-icon">QUIZ</div>
       <span class="dash-number" id="aatDashQuizzes">0</span>
       <small>Quiz attempts</small>
     </div>
     <div class="dash-card">
-      <div class="dash-icon">ð</div>
+      <div class="dash-icon">RESULT</div>
       <span class="dash-number" id="aatDashAverage">0%</span>
       <small>Average quiz score</small>
     </div>
     <div class="dash-card">
-      <div class="dash-icon">ð¥</div>
+      <div class="dash-icon">TASK</div>
       <span class="dash-number" id="aatDashStreak">0 days</span>
       <small>Current study streak</small>
     </div>
@@ -1415,19 +1426,19 @@ updateDashboard();
 
   <div class="dash-bottom">
     <div class="dash-panel">
-      <h3>ð Your weekly study activity</h3>
+      <h3>ACC Your weekly study activity</h3>
       <div class="week-chart" id="aatDashWeek"></div>
       <p id="aatDashWeekMessage">Your study activity will appear here.</p>
     </div>
 
     <div class="dash-panel">
-      <h3>ð Your revision progress</h3>
+      <h3>Your revision progress</h3>
       <strong id="aatDashProgressText">0% completed</strong>
       <div class="dash-progress">
         <span id="aatDashProgressBar"></span>
       </div>
       <p>Keep completing topics to build your progress.</p>
-      <h3 style="margin-top:20px">â¡ Quick access</h3>
+      <h3 style="margin-top:20px">Quick access</h3>
       <div class="dash-shortcuts">
         <a href="#levels">AAT Levels</a>
         <a href="#resources">Study Notes</a>
@@ -1590,18 +1601,16 @@ updateDashboard();
 <!-- END PROFESSIONAL STUDENT DASHBOARD -->
   <!-- AAT REVISION HUB STUDENT ACCOUNTS -->
 <style>
-#aatAccountButton{position:fixed;right:16px;bottom:16px;z-index:9998;background:#c62828;color:white;border:0;border-radius:30px;padding:13px 20px;font-weight:bold;box-shadow:0 3px 12px #0004;cursor:pointer;font-size:15px}
 #aatAccountPanel{display:none;position:fixed;inset:0;z-index:9999;background:#0009;align-items:center;justify-content:center;padding:15px}
 #aatAccountCard{background:white;color:#222;width:100%;max-width:420px;border-radius:16px;padding:22px;max-height:90vh;overflow:auto;font-family:Arial,sans-serif}
 #aatAccountCard h2{margin-top:0;color:#b71c1c}
 #aatAccountCard input{box-sizing:border-box;width:100%;padding:12px;margin:7px 0;border:1px solid #ccc;border-radius:8px;font-size:16px}
-#aatAccountCard button{padding:11px 15px;border:0;border-radius:8px;background:#b71c1c;color:white;font-weight:bold;margin:5px 4px 5px 0}
+#aatAccountCard button{padding:11px 15px;border:0;border-radius:8px;background:#b71c1c;color:white;font-weight:bold;margin:5px 4px 5px 0;cursor:pointer;font-size:14px}
 #aatAccountCard button.secondary{background:#555}
 #aatAccountMessage{margin-top:12px;white-space:pre-wrap;font-size:14px}
 #aatAccountClose{float:right;background:#555!important}
 </style>
 
-<button id="aatAccountButton" type="button" onclick="openAATAccount()">My Account / Login</button>
 <div id="aatAccountPanel">
   <div id="aatAccountCard">
     <button id="aatAccountClose" class="secondary" style="float:right">Close</button>
@@ -1630,7 +1639,6 @@ updateDashboard();
   const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_6Wun1amgbRtAEmsvi_cKzQ_6TjKxfC9";
 
   const panel = document.getElementById("aatAccountPanel");
-  const accountButton = document.getElementById("aatAccountButton");
   const message = document.getElementById("aatAccountMessage");
   const forms = document.getElementById("aatAccountForms");
   const loggedIn = document.getElementById("aatLoggedIn");
