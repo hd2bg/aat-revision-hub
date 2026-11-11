@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -598,7 +599,6 @@ button:disabled{opacity:.55;cursor:not-allowed;transform:none!important}
   <div class="grid">
    <div><h3> Qualifications</h3><a class="btn secondary" href="https://www.aat.org.uk/qualifications-and-courses/accounting" target="_blank" rel="noopener">AAT qualifications </a></div>
    <div><h3> Specifications</h3><a class="btn secondary" href="https://www.aat.org.uk/deliver/qualifications/specifications-outlines" target="_blank" rel="noopener">Qualification specifications </a></div>
-   <div><h3> Level 4 syllabus</h3><a class="btn secondary" href="https://www.aat.org.uk/qualifications-and-courses/accounting/level-4-diploma-professional-accounting-technicians" target="_blank" rel="noopener">Professional Accounting Technicians </a></div>
    <div><h3>TEST Assessments</h3><a class="btn secondary" href="https://www.aat.org.uk/assessments" target="_blank" rel="noopener">Assessment information </a></div>
   </div>
  </div>
@@ -694,11 +694,11 @@ const units = {
   {name:"Tax Processes for Businesses",code:"TPFB",desc:"Business tax processes and relevant tax responsibilities."}
  ],
  4:[
-  {name:"Financial Accounting",code:"FNAC",desc:"Mandatory • 25% • Reporting frameworks, accounting standards, company statements and ratio analysis."},
-  {name:"Management Accounting",code:"MNAC",desc:"Mandatory • 25% • Planning, cost control, short/long-term decisions and liquidity."},
-  {name:"Audit and Internal Controls",code:"ATIC",desc:"Mandatory • 15% • Fraud risks, governance, audit planning, controls, evidence and reporting."},
-  {name:"Principles of Taxation",code:"POTX",desc:"Mandatory • 15% • Income Tax, National Insurance, CGT, Corporation Tax, administration and ethics."},
-  {name:"Advanced Business Awareness",code:"AVBA",desc:"Mandatory • 20% • Business decisions, organisational effectiveness, ethics, data and sustainability."}
+  {name:"Financial Accounting",code:"FNAC",desc:"Financial reporting frameworks, standards and company statements."},
+  {name:"Management Accounting",code:"MNAC",desc:"Planning, budgets, control, decision making and liquidity."},
+  {name:"Audit and Internal Controls",code:"ATIC",desc:"Internal controls, audit planning, evidence and reporting."},
+  {name:"Principles of Taxation",code:"POTX",desc:"UK Income Tax, National Insurance, CGT and Corporation Tax."},
+  {name:"Advanced Business Awareness",code:"AVBA",desc:"Strategy, business decisions, ethics, data and sustainability."}
  ]
 };
 
@@ -1158,141 +1158,6 @@ function saveName(){
 }
 
 /* ========================================
-   EXPANDED SYLLABUS-ALIGNED REVISION CONTENT
-   Content is independently written and mapped to AAT published learning outcomes.
-======================================== */
-Object.assign(notes, {
- "l2-bookkeeping-systems": {
-  title:"Level 2 — Introduction to Bookkeeping: Complete Topic Notes", level:2,
-  html:`<div class="note-content"><span class="tag free">LEVEL 2 • INTRODUCTION TO BOOKKEEPING</span>
-  <h3>1. The bookkeeping system and source documents</h3><p>Bookkeeping records financial transactions in a structured way so that the organisation can monitor what it owns, owes, earns and spends. A source document provides evidence of a transaction and supports accurate entry.</p>
-  <ul><li><b>Sales invoice:</b> records goods or services sold on credit.</li><li><b>Purchase invoice:</b> records goods or services bought on credit.</li><li><b>Credit note:</b> reduces an amount previously invoiced, often for returns or an agreed allowance.</li><li><b>Remittance advice:</b> explains which invoices a customer is paying.</li><li><b>Receipt:</b> evidence that money has been received.</li><li><b>Statement:</b> summary of transactions and balance on a customer or supplier account.</li></ul>
-  <h3>2. The accounting equation</h3><div class="formula">Assets = Capital + Liabilities<br>Capital = Assets − Liabilities</div><p>Every transaction keeps the accounting equation in balance. For example, the owner introduces £2,000 cash: bank increases by £2,000 and capital increases by £2,000.</p>
-  <h3>3. Debit and credit rules</h3><table><tr><th>Account</th><th>Increase</th><th>Decrease</th></tr><tr><td>Assets</td><td>Debit</td><td>Credit</td></tr><tr><td>Expenses</td><td>Debit</td><td>Credit</td></tr><tr><td>Drawings</td><td>Debit</td><td>Credit</td></tr><tr><td>Liabilities</td><td>Credit</td><td>Debit</td></tr><tr><td>Capital</td><td>Credit</td><td>Debit</td></tr><tr><td>Income</td><td>Credit</td><td>Debit</td></tr></table>
-  <h3>4. Posting transactions</h3><p>Identify the two accounts affected, decide whether each account increases or decreases, then apply the debit/credit rules. A credit sale normally debits trade receivables and credits sales. When the customer pays, debit bank and credit trade receivables.</p>
-  <h3>5. Cash and bank transactions</h3><p>Record cash received and paid promptly. Distinguish cash discounts from trade discounts, and distinguish a payment to a supplier from a purchase itself. A bank payment reduces the bank asset; a bank receipt increases it.</p>
-  <h3>6. Errors to avoid</h3><ul><li>Posting a transaction to the wrong customer's or supplier's account.</li><li>Recording a cash receipt as sales when it settles an existing receivable.</li><li>Reversing debit and credit entries.</li><li>Confusing net, VAT and gross amounts.</li><li>Failing to retain source-document evidence.</li></ul>
-  <h3>Exam method</h3><p>For each transaction, write: source document → accounts affected → debit → credit → amount. Check that total debits equal total credits.</p></div>`
- },
- "l2-controls": {
-  title:"Level 2 — Principles of Bookkeeping Controls", level:2,
-  html:`<div class="note-content"><span class="tag free">LEVEL 2 • BOOKKEEPING CONTROLS</span>
-  <h3>1. Control accounts</h3><p>A control account is a summary account in the general ledger. The receivables control account summarises amounts owed by credit customers; the payables control account summarises amounts owed to credit suppliers.</p>
-  <p><b>Receivables control:</b> opening debit + credit sales − receipts − sales returns − discounts allowed − irrecoverable debts ± corrections = closing debit balance.</p><p><b>Payables control:</b> opening credit + credit purchases − payments − purchase returns − discounts received ± corrections = closing credit balance.</p>
-  <h3>2. Bank reconciliation</h3><p>Compare the cash book with the bank statement. Update the cash book first for items not yet recorded, such as bank charges, interest, direct debits, standing orders and dishonoured receipts. Then reconcile timing differences such as unpresented cheques and outstanding lodgements.</p>
-  <ul><li><b>Unpresented cheque:</b> recorded in the cash book but not yet shown by the bank.</li><li><b>Outstanding lodgement:</b> recorded in the cash book but not yet credited by the bank.</li><li><b>Bank error:</b> notify the bank; do not treat it as a business cash-book error.</li></ul>
-  <h3>3. Journals and correction of errors</h3><p>The journal records adjustments and corrections before posting to ledger accounts. Errors may include omission, commission, principle, original entry, reversal and compensating errors. A suspense account may temporarily hold a difference when a trial balance does not agree, but it must be cleared once the error is identified.</p>
-  <h3>4. Trial balance</h3><p>A trial balance lists ledger balances in debit and credit columns. Agreement checks arithmetic equality, not complete accuracy. It will not necessarily reveal complete omission, an error of principle, a reversal or equal compensating errors.</p>
-  <h3>Exam method</h3><p>For reconciliations, label each adjustment and show the direction clearly. For control accounts, use a T-account and check the balance carried down is on the correct side.</p></div>`
- },
- "l2-costing-detail": {
-  title:"Level 2 — Principles of Costing", level:2,
-  html:`<div class="note-content"><span class="tag free">LEVEL 2 • PRINCIPLES OF COSTING</span>
-  <h3>1. Why organisations use costing</h3><p>Cost information supports pricing, planning, stock valuation, cost control and decisions. A cost unit is a unit of product or service for which costs are calculated; a cost centre is a location, function or department for which costs are collected.</p>
-  <h3>2. Cost classification</h3><ul><li><b>Direct material:</b> material traceable to a cost unit.</li><li><b>Direct labour:</b> labour traceable to a cost unit.</li><li><b>Direct expense:</b> other directly traceable cost.</li><li><b>Indirect cost/overhead:</b> cost not economically traceable to one cost unit.</li><li><b>Fixed cost:</b> total remains constant within the relevant range.</li><li><b>Variable cost:</b> total changes with activity; cost per unit is usually constant.</li><li><b>Semi-variable cost:</b> contains fixed and variable elements.</li></ul>
-  <div class="formula">Prime cost = Direct material + Direct labour + Direct expenses<br>Production cost = Prime cost + Production overheads</div>
-  <h3>3. Materials and labour</h3><p>Material records track receipts, issues and balances. Labour cost may include basic pay, overtime premiums and employer costs where relevant. Idle time is paid time when productive work is not performed.</p>
-  <h3>4. Overheads</h3><p>Allocation charges an overhead wholly to a cost centre; apportionment shares a common overhead between cost centres using a suitable basis. Reapportion service department costs to production departments before calculating an overhead absorption rate.</p>
-  <div class="formula">Overhead absorption rate = Budgeted production overhead ÷ Budgeted activity</div><p>Activity may be labour hours, machine hours or units, depending on the cost environment.</p>
-  <h3>5. Actual and budgeted information</h3><p>Compare actual costs with budgeted costs, investigate significant differences and explain causes. A budget is a plan; it is not proof that spending is efficient or appropriate.</p>
-  <h3>Exam method</h3><p>Show units in every calculation, use the basis specified in the question and distinguish total cost from cost per unit.</p></div>`
- },
- "l2-business-environment": {
-  title:"Level 2 — The Business Environment", level:2,
-  html:`<div class="note-content"><span class="tag free">LEVEL 2 • BUSINESS ENVIRONMENT</span>
-  <h3>1. Types of organisation</h3><p>Sole traders are owned by one individual; partnerships are owned by two or more partners; companies are separate legal entities owned by shareholders. Public, private and not-for-profit organisations may have different objectives and accountability requirements.</p>
-  <h3>2. Business functions</h3><p>Typical functions include finance, operations, sales and marketing, human resources, purchasing and IT. The finance function records transactions, safeguards assets, prepares reports, supports budgets and supplies information for decisions.</p>
-  <h3>3. External environment</h3><p>Political, economic, social, technological, legal and environmental factors can affect demand, costs, regulation and business decisions. Identify the specific impact rather than simply naming a factor.</p>
-  <h3>4. Contracts and legal basics</h3><p>A contract generally requires offer, acceptance, consideration, intention to create legal relations and capacity. Terms may be express or implied. A breach may lead to remedies such as damages, depending on the circumstances and law.</p>
-  <h3>5. Ethics and sustainability</h3><p>Ethical conduct includes honesty, fairness, respect for confidentiality and responsible use of information. Sustainability considers longer-term environmental, social and economic effects. Organisations should avoid misleading claims and consider the impact of their supply chains and operations.</p>
-  <h3>6. Communication</h3><p>Choose a format suited to the audience: concise emails for routine updates, structured reports for analysis, tables for comparisons and charts for trends. Check accuracy, tone, confidentiality and clarity before sharing information.</p></div>`
- },
- "l3-business-awareness": {
-  title:"Level 3 — Business Awareness", level:3,
-  html:`<div class="note-content"><span class="tag free">LEVEL 3 • BUSINESS AWARENESS</span>
-  <h3>1. Business structure and governance</h3><p>Understand sole traders, partnerships, limited companies and other forms, including ownership, liability, sources of finance and reporting responsibilities. Governance is the system by which an organisation is directed and controlled; it supports accountability, oversight and responsible decisions.</p>
-  <h3>2. Stakeholders</h3><p>Owners, directors, employees, customers, suppliers, lenders, regulators and communities may have different interests. Explain how a decision benefits one group but may affect another.</p>
-  <h3>3. Internal and external environment</h3><p>Internal factors include resources, people, systems, culture and capabilities. External factors include competition, economic conditions, legislation, technology and social expectations. SWOT and PESTLE can organise analysis.</p>
-  <h3>4. Ethics</h3><p>Apply integrity, objectivity, professional competence and due care, confidentiality and professional behaviour. Identify threats such as self-interest, self-review, advocacy, familiarity and intimidation, then consider safeguards.</p>
-  <h3>5. Technology and data</h3><p>Accounting systems can automate processing, reporting and reconciliation. Benefits include speed and consistency; risks include cyber attack, poor data, unauthorised access, system outages and over-reliance on automated outputs. Access controls, backups, validation and review are important.</p>
-  <h3>6. Communicating information</h3><p>Make reports relevant to the reader, distinguish fact from opinion, explain limitations and support recommendations with evidence. Protect confidential information and use clear professional language.</p></div>`
- },
- "l3-financial-statements": {
-  title:"Level 3 — Financial Accounting: Preparing Financial Statements", level:3,
-  html:`<div class="note-content"><span class="tag free">LEVEL 3 • FINANCIAL ACCOUNTING</span>
-  <h3>1. Accounting concepts</h3><p>Apply accruals, consistency, prudence, going concern, materiality and business entity concepts as appropriate. Financial statements should reflect the period to which income and expenses relate, not simply cash movements.</p>
-  <h3>2. Non-current assets</h3><p>Record acquisition and disposal correctly. Depreciation allocates depreciable amount over useful life; it is not a cash payment. Capital expenditure creates or enhances an asset; revenue expenditure is charged as an expense.</p>
-  <div class="formula">Straight-line depreciation = (Cost − Residual value) ÷ Useful life<br>Reducing balance depreciation = Carrying amount × Rate</div>
-  <h3>3. Period-end adjustments</h3><ul><li>Accrual: add expense incurred but unpaid; recognise liability.</li><li>Prepayment: remove future-period expense; recognise asset.</li><li>Accrued income: recognise earned income not yet received.</li><li>Deferred income: recognise cash received for work not yet earned as a liability.</li><li>Inventory: closing inventory is included in the statement of financial position and deducted in arriving at cost of sales.</li><li>Irrecoverable debts and allowances: recognise expected credit losses in line with the task's requirements.</li></ul>
-  <h3>4. Sole trader and partnership statements</h3><p>Prepare a statement of profit or loss and statement of financial position from the adjusted trial balance. For partnerships, understand appropriation of profit, partners' salaries, interest on capital, interest on drawings and residual profit-sharing ratios where required.</p>
-  <h3>5. Incomplete records</h3><p>Use control accounts, opening and closing capital, cash/bank summaries and mark-up or margin relationships to reconstruct missing figures. State the method and show each stage.</p>
-  <h3>6. Profitability ratios</h3><div class="formula">Gross profit margin = Gross profit ÷ Revenue × 100<br>Operating profit margin = Operating profit ÷ Revenue × 100</div><p>Explain changes using relevant causes such as selling prices, purchase costs, sales mix and operating expenses.</p></div>`
- },
- "l3-management-techniques": {
-  title:"Level 3 — Management Accounting Techniques", level:3,
-  html:`<div class="note-content"><span class="tag free">LEVEL 3 • MANAGEMENT ACCOUNTING</span>
-  <h3>1. Cost behaviour</h3><p>Fixed costs remain constant in total within a relevant range; variable costs change in total with activity; semi-variable costs contain both. Identify the cost driver before forecasting cost.</p>
-  <h3>2. Materials, labour and overheads</h3><p>Calculate material usage and cost, labour hours and rates, and overhead absorption. Under-absorption occurs when absorbed overhead is less than actual overhead; over-absorption is the reverse. Investigate the reason rather than assuming it is inefficiency.</p>
-  <h3>3. Marginal costing</h3><div class="formula">Contribution = Sales − Variable costs<br>Contribution per unit = Selling price − Variable cost per unit<br>Profit = Total contribution − Fixed costs<br>Break-even units = Fixed costs ÷ Contribution per unit<br>Margin of safety = Actual/budgeted sales − Break-even sales</div>
-  <h3>4. Budgeting</h3><p>Budgets coordinate plans and provide a basis for control. Sales budgets often drive production, materials, labour and overhead budgets. Know incremental, zero-based, rolling and flexible budgeting and the strengths/limitations of each.</p>
-  <h3>5. Variances</h3><p>Compare actual results with budget or standard. Favourable means the effect is beneficial to profit; adverse means detrimental. Analyse price/rate and usage/efficiency causes separately where the data allows.</p>
-  <h3>6. Cash management</h3><p>Cash forecasts estimate receipts and payments and identify periods of surplus or shortage. Improve cash flow by managing receivable collection, inventory levels, supplier terms and timing of expenditure. Profit and cash are not the same.</p>
-  <h3>7. Spreadsheet skills</h3><p>Use formulas consistently, label assumptions, check cell references, validate inputs and sense-check outputs. A spreadsheet error can affect many downstream calculations.</p></div>`
- },
- "l3-tax-processes": {
-  title:"Level 3 — Tax Processes for Businesses", level:3,
-  html:`<div class="note-content"><span class="tag free">LEVEL 3 • TAX PROCESSES</span>
-  <h3>1. VAT concepts</h3><p>Output VAT is VAT charged on taxable sales. Input VAT is VAT incurred on purchases. A VAT return reports relevant totals and the net amount payable or repayable. The treatment depends on the supply type, place of supply, rate and recovery rules.</p>
-  <div class="formula">VAT payable/(repayable) = Output VAT − Recoverable input VAT</div>
-  <h3>2. VAT calculations</h3><p>For a standard-rated example at 20%: VAT = net amount × 20%; gross = net × 1.20; VAT extracted from a VAT-inclusive gross amount = gross × 1/6. Only use the rate and fraction specified or applicable to the question.</p>
-  <h3>3. VAT records and returns</h3><p>Keep valid supporting records, check invoices and credit notes, reconcile VAT control accounts and investigate unusual balances. Distinguish zero-rated, exempt and outside-the-scope supplies; they do not have identical consequences for input tax recovery.</p>
-  <h3>4. Payroll fundamentals</h3><p>Payroll involves gross pay, taxable pay, employee deductions, employer contributions and net pay. Understand the purpose of PAYE, National Insurance, tax codes, statutory deductions and payroll records. Use current official rates and thresholds for calculations.</p>
-  <h3>5. Compliance and reporting</h3><p>Meet filing and payment deadlines, maintain accurate records and protect employee/customer data. Correct errors using the appropriate HMRC process and retain evidence of submissions and payments.</p></div>`
- },
- "l4-tax-principles": {
-  title:"Level 4 — Principles of Taxation: Detailed Revision", level:4,
-  html:`<div class="note-content"><span class="tag pro">LEVEL 4 • MANDATORY UNIT • 15% OF QUALIFICATION</span>
-  <h3>Official unit coverage</h3><p>This pack follows the new Level 4 unit outcomes: UK tax system and ethics; Income Tax and National Insurance; types of income; Capital Gains Tax; company tax computations; tax administration; and tax planning.</p>
-  <h3>1. UK tax system and ethical conduct</h3><p>Understand the roles of HM Treasury and HMRC, the distinction between direct and indirect taxes, self-assessment and PAYE, and the obligations of taxpayers and agents. Tax avoidance, tax evasion and legitimate tax planning are not interchangeable. An adviser must act lawfully, competently and in the client's interests without misleading HMRC or facilitating dishonesty.</p>
-  <h3>2. Income categories</h3><ul><li><b>Employment:</b> salary, wages, bonuses and taxable benefits, subject to relevant exemptions and rules.</li><li><b>Self-employment/trading:</b> trading profits calculated using the relevant tax rules.</li><li><b>Property:</b> taxable property income after allowable deductions and adjustments.</li><li><b>Savings and investment:</b> interest, dividends and other investment income, each with its own treatment.</li></ul>
-  <h3>3. Income Tax computation framework</h3><p>Identify the tax year and taxpayer status. Classify income, calculate each source, apply allowable deductions and reliefs, allocate allowances in the prescribed order, then apply the relevant tax bands and rates. Account for tax already deducted at source where the question requires it.</p>
-  <h3>4. National Insurance</h3><p>Distinguish employee Class 1 contributions, employer Class 1 contributions, self-employed Class 4 contributions and voluntary Class 3 contributions. Identify the relevant earnings/profits and tax year before applying thresholds and rates.</p>
-  <h3>5. Capital Gains Tax</h3><p>Identify the disposal proceeds, allowable acquisition/incidental costs and enhancement expenditure. Deduct allowable losses and the annual exempt amount where applicable, then apply the correct rate based on the taxpayer and asset type. Consider reliefs only when the facts support them.</p>
-  <div class="formula">Chargeable gain = Disposal proceeds − Allowable cost − Allowable incidental costs − Qualifying enhancement expenditure</div>
-  <h3>6. Corporation Tax</h3><p>Start with accounting profit, add back disallowable expenses, deduct non-taxable income and apply tax adjustments. Include taxable trading, property and interest income and chargeable gains where relevant. Consider capital allowances, losses, associated companies and periods of account in line with the assessment rules.</p>
-  <h3>7. Administration and tax planning</h3><p>Know the importance of registration, returns, payment deadlines, record keeping, amendments, enquiries, penalties and interest. A tax-planning recommendation should be lawful, commercially realistic, supported by current rules and clearly explain risks and obligations.</p>
-  <h3>Tax calculation warning</h3><p>Rates, allowances, thresholds and deadlines change. Do not memorise an old tax table as current law. Use the tax tables and tax-year instructions supplied for your assessment and confirm the relevant assessment date.</p></div>`
- },
- "l4-audit-controls": {
-  title:"Level 4 — Audit and Internal Controls: Detailed Revision", level:4,
-  html:`<div class="note-content"><span class="tag pro">LEVEL 4 • MANDATORY UNIT • 15% OF QUALIFICATION</span>
-  <h3>1. Internal control purpose</h3><p>Internal controls help safeguard assets, maintain reliable records, support efficient operations and promote compliance. Controls reduce risk but cannot eliminate it; limitations include human error, collusion, management override and cost.</p>
-  <h3>2. Fraud risks</h3><p>Consider incentives/pressure, opportunities and rationalisation, while avoiding assumptions that fraud has occurred. Common risks include fictitious suppliers, altered bank details, duplicate payments, inventory theft, revenue manipulation and management override.</p>
-  <h3>3. Governance and assurance</h3><p>Corporate governance provides oversight, accountability and a framework for responsible management. Distinguish management's responsibility for preparing financial statements and maintaining controls from the auditor's responsibility to obtain evidence and report an independent conclusion.</p>
-  <h3>4. Audit planning and risk</h3><p>Understand the entity, its environment, accounting policies and control system. Identify risks of material misstatement at financial statement and assertion levels. Plan procedures that respond to assessed risks, materiality and the nature/timing/extent of testing.</p>
-  <div class="formula">Audit risk = Risk of material misstatement × Detection risk<br>Risk of material misstatement comprises inherent risk and control risk</div>
-  <h3>5. Assertions</h3><ul><li><b>Existence:</b> recorded assets and liabilities exist.</li><li><b>Completeness:</b> all items that should be recorded are included.</li><li><b>Rights and obligations:</b> entity owns/controls assets and is responsible for liabilities.</li><li><b>Accuracy, valuation and allocation:</b> amounts are correctly measured.</li><li><b>Cut-off:</b> recorded in the correct accounting period.</li><li><b>Classification and presentation:</b> properly classified and disclosed.</li></ul>
-  <h3>6. Audit procedures and evidence</h3><p>Inspection, observation, external confirmation, recalculation, reperformance, analytical procedures and enquiry. Strong answers state the procedure, the document/population, the assertion addressed and what the auditor is checking. Evidence must be sufficient in quantity and appropriate in relevance/reliability.</p>
-  <h3>7. Sampling and controls testing</h3><p>Define the population and sampling unit, select a representative sample, perform the test and evaluate deviations. A test of control checks whether a control operated; a substantive procedure seeks evidence of monetary misstatement.</p>
-  <h3>8. Findings and reporting</h3><p>Evaluate identified misstatements, consider whether they are material and pervasive, communicate control deficiencies to appropriate parties and form the report conclusion. An unmodified opinion is appropriate when the statements are fairly presented in all material respects. Modified opinions include qualified, adverse and disclaimer, depending on materiality, pervasiveness and evidence limitations.</p>
-  <h3>Exam technique</h3><p>Link every identified risk to a possible misstatement and a tailored audit response. Avoid vague procedures such as “check the invoice”: say what is checked, against which independent evidence and why.</p></div>`
- },
- "l4-business-awareness": {
-  title:"Level 4 — Advanced Business Awareness: Detailed Revision", level:4,
-  html:`<div class="note-content"><span class="tag pro">LEVEL 4 • MANDATORY UNIT • 20% OF QUALIFICATION</span>
-  <h3>1. Business decision making</h3><p>Evaluate options against strategic objectives, stakeholder needs, financial and non-financial evidence, risks and constraints. Distinguish strategic, tactical and operational decisions. Recommendations should be justified and measurable.</p>
-  <h3>2. Organisational effectiveness</h3><p>Consider structure, culture, leadership, resource allocation, performance measures, time management and communication. Effective change needs a clear purpose, stakeholder engagement, realistic milestones, training and evaluation.</p>
-  <h3>3. Equality, diversity and inclusion</h3><p>Recognise barriers to fair participation and the value of inclusive recruitment, accessible communication, reasonable adjustments and respectful workplace practices. Explain how inclusive practices can improve wellbeing, retention, decision quality and organisational reputation.</p>
-  <h3>4. Ethics and law in accounting</h3><p>Distinguish legal requirements from broader ethical responsibilities. Apply integrity, objectivity, professional competence and due care, confidentiality and professional behaviour. When facing an ethical conflict: identify the facts, relevant principles and threats, consider safeguards, consult appropriate guidance, document the decision and escalate where necessary.</p>
-  <h3>5. Data handling and analysis</h3><p>Collect data lawfully and for a defined purpose. Clean data by checking missing values, duplicates, inconsistent formats, outliers and accuracy. Analyse using suitable comparisons, trends, ratios and visualisations. Explain limitations and avoid claiming that correlation proves causation.</p>
-  <ul><li><b>Accuracy:</b> data reflects reality.</li><li><b>Completeness:</b> required fields and records are present.</li><li><b>Consistency:</b> definitions and formats align.</li><li><b>Timeliness:</b> data is current enough for the decision.</li><li><b>Relevance:</b> data relates to the question being answered.</li></ul>
-  <h3>6. Data protection and digital risk</h3><p>Understand lawful, fair and transparent processing, purpose limitation, data minimisation, accuracy, storage limitation, security and accountability. Practical safeguards include role-based access, strong authentication, encryption where appropriate, backups, staff training and incident procedures.</p>
-  <h3>7. Sustainability</h3><p>Consider environmental, social and governance impacts, supply chains, resource use, emissions, workforce wellbeing and long-term resilience. Evaluate both benefits and implementation costs. Use credible measures and avoid greenwashing or unsupported claims.</p>
-  <h3>8. Communication and recommendation structure</h3><p>Use a concise structure: issue → evidence → analysis → options → recommendation → implementation → measure of success. Tailor detail and terminology to the audience, protect confidentiality and clearly identify assumptions and limitations.</p></div>`
- }
-});
-
-/* ========================================
    UNIT AND RESOURCE RENDERING
 ======================================== */
 
@@ -1319,26 +1184,12 @@ const resources=[
  {title:"Budgets and variances",desc:"Explore budget preparation and variance analysis.",icon:"BUD",level:3,note:"budgets",type:"Notes",premium:false},
  {title:"Professional ethics",desc:"Learn ethical principles and threats.",icon:"ETH",level:3,note:"ethics",type:"Notes",premium:false},
  {title:"Financial statements",desc:"Understand company financial reporting.",icon:"FS",level:4,note:"financial-statements",type:"Notes",premium:false},
- {title:"Audit and internal controls",desc:"Explore risk, controls and audit evidence.",icon:"AUD",level:4,note:"l4-audit-controls",type:"Notes",premium:false},
- {title:"Principles of taxation",desc:"Explore the main UK taxation areas.",icon:"TAX",level:4,note:"l4-tax-principles",type:"Notes",premium:false},
+ {title:"Audit and internal controls",desc:"Explore risk, controls and audit evidence.",icon:"AUD",level:4,note:"audit",type:"Notes",premium:false},
+ {title:"Principles of taxation",desc:"Explore the main UK taxation areas.",icon:"TAX",level:4,note:"tax",type:"Notes",premium:false},
  {title:"Management accounting & decision making",desc:"Cost behaviour, contribution, break-even, budgets, variances and investment appraisal.",icon:"MA",level:4,note:"management-accounting",type:"Notes",premium:false},
- {title:"Advanced business awareness & strategy",desc:"PESTLE, SWOT, stakeholders, governance, risk, data, ethics and sustainability.",icon:"BA",level:4,note:"l4-business-awareness",type:"Notes",premium:false},
+ {title:"Advanced business awareness & strategy",desc:"PESTLE, SWOT, stakeholders, governance, risk, data, ethics and sustainability.",icon:"BA",level:4,note:"advanced-business",type:"Notes",premium:false},
  {title:"Advanced practice question bank",desc:"Additional topic-based questions and explanations.",icon:"PRO",level:4,note:"audit",type:"Premium preview",premium:true}
 ];
-
-resources.push(
- {title:"Level 2: Introduction to Bookkeeping — full notes",desc:"Source documents, accounting equation, double entry, posting and common errors.",icon:"L2BK",level:2,note:"l2-bookkeeping-systems",type:"Notes",premium:false},
- {title:"Level 2: Bookkeeping Controls",desc:"Control accounts, bank reconciliation, journals, errors and trial balances.",icon:"CTRL",level:2,note:"l2-controls",type:"Notes",premium:false},
- {title:"Level 2: Principles of Costing",desc:"Cost classification, prime cost, overheads and absorption rates.",icon:"COST",level:2,note:"l2-costing-detail",type:"Notes",premium:false},
- {title:"Level 2: The Business Environment",desc:"Business types, functions, contracts, external factors and ethics.",icon:"BIZ",level:2,note:"l2-business-environment",type:"Notes",premium:false},
- {title:"Level 3: Business Awareness",desc:"Governance, stakeholders, environment, ethics, technology and communication.",icon:"BA",level:3,note:"l3-business-awareness",type:"Notes",premium:false},
- {title:"Level 3: Financial Accounting",desc:"Accounting concepts, non-current assets, adjustments and final accounts.",icon:"FA",level:3,note:"l3-financial-statements",type:"Notes",premium:false},
- {title:"Level 3: Management Accounting Techniques",desc:"Costing, marginal costing, budgets, variances and cash management.",icon:"MA",level:3,note:"l3-management-techniques",type:"Notes",premium:false},
- {title:"Level 3: Tax Processes for Businesses",desc:"VAT, returns, records, payroll fundamentals and compliance.",icon:"TAX",level:3,note:"l3-tax-processes",type:"Notes",premium:false},
- {title:"Level 4: Principles of Taxation — detailed syllabus pack",desc:"Income Tax, National Insurance, CGT, Corporation Tax, administration and ethics.",icon:"TAX4",level:4,note:"l4-tax-principles",type:"Notes",premium:false},
- {title:"Level 4: Audit and Internal Controls — detailed syllabus pack",desc:"Fraud risks, governance, audit planning, assertions, evidence, sampling and reporting.",icon:"AUD4",level:4,note:"l4-audit-controls",type:"Notes",premium:false},
- {title:"Level 4: Advanced Business Awareness — detailed syllabus pack",desc:"Decision making, organisational effectiveness, EDI, ethics, data and sustainability.",icon:"BA4",level:4,note:"l4-business-awareness",type:"Notes",premium:false}
-);
 
 function renderResources(){
  const search=document.getElementById("resourceSearch").value.toLowerCase();
@@ -1372,9 +1223,9 @@ function showUnit(code,level){
  <div class="grid">
   <button class="btn secondary" onclick="openNotes('financial-statements')">Financial accounting & ratios</button>
   <button class="btn secondary" onclick="openNotes('management-accounting')">Management accounting</button>
-  <button class="btn secondary" onclick="openNotes('l4-audit-controls')">Audit & controls</button>
-  <button class="btn secondary" onclick="openNotes('l4-tax-principles')">Principles of taxation</button>
-  <button class="btn secondary" onclick="openNotes('l4-business-awareness')">Advanced business awareness</button>
+  <button class="btn secondary" onclick="openNotes('audit')">Audit & controls</button>
+  <button class="btn secondary" onclick="openNotes('tax')">UK taxation</button>
+  <button class="btn secondary" onclick="openNotes('advanced-business')">Business strategy</button>
  </div>`:""}
  <button class="btn primary" onclick="markComplete('${code}');closeModal('contentModal')">Mark unit as revised </button>
  <p class="small muted">This is a revision checklist, not an official unit specification.</p>`;
